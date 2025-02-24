@@ -1,6 +1,9 @@
 const manager = require("../nlp/nlpModel");
+const axios = require('axios');
 const fungsiModul = require('../nlp/fungsi.js'); 
+const { sendWA } = require("../helper/bpjs");
 const { Session } = require("../models");
+
 const { Op } = require("sequelize");
 
 const processMessage = async (req, res) => {
@@ -29,10 +32,13 @@ const processMessage = async (req, res) => {
     if (dataSession.status === 1) {
         const answer = await fungsiModul[dataSession.feedback_function](message, dataSession);
         if (!answer) {
+
+            sendWA(nowa, dataSession.feedback_message)
             return res.json({
                 answer: dataSession.feedback_message,
             });
         }
+        sendWA(nowa, answer)
         
         return res.json({
             answer: answer,
@@ -52,6 +58,7 @@ const processMessage = async (req, res) => {
                 id: dataSession.id
             }
         });
+        sendWA(nowa, response.answer)
         return res.json({
             intent: response.intent,
             answer: response.answer,
@@ -68,13 +75,15 @@ const processMessage = async (req, res) => {
                 id: dataSession.id
             }
         });
+        sendWA(nowa, response.answer)
         return res.json({
             intent: response.intent,
             answer: response.answer,
         });
     }
-    res.json({
-        // intent: response.intent,
+    sendWA(nowa, response.answer)
+    return res.json({
+        intent: response.intent,
         answer: response.answer || "Maaf, saya tidak mengerti. Coba tanyakan informasi ketersediaan kamar atau jadwal dokter.",
     });
 };

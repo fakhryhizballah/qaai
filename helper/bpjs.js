@@ -35,5 +35,20 @@ function cekSttRujukan(tglKunjungan) {
 
     return diffInMonths > 3;
 }
+async function sendWA(telp, pesan) {
+    try {
+        await axios.post(process.env.HOSTWA, { telp: telp, message: pesan }, {
+            headers: {
+                Authorization: process.env.SECRET_WA,
+                "Content-Type": "application/json",
+                timeout: 2000 // only wait for 2s
+            }
+        });
+    } catch (error) {
+        console.log(error)
 
-module.exports = { findBPJS, cekRujukan, cekSttRujukan }
+    }
+
+}
+
+module.exports = { findBPJS, cekRujukan, cekSttRujukan, sendWA }
