@@ -1,0 +1,2124 @@
+{
+  "settings": {
+    "languages": [
+      "id"
+    ],
+    "forceNER": true,
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "id"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "id": {
+        "settings": {
+          "locale": "id",
+          "trainByDomain": false,
+          "tag": "domain-manager-id",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "hallo,halo": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "haai,hai": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "apakabar": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "misi": {
+            "intent": "question.visiMisi",
+            "domain": "default"
+          },
+          "p": {
+            "intent": "ping",
+            "domain": "default"
+          },
+          "ping": {
+            "intent": "ping",
+            "domain": "default"
+          },
+          "pagi,selamat": {
+            "intent": "salam Pagi",
+            "domain": "default"
+          },
+          "selamat,siang": {
+            "intent": "salam Siang",
+            "domain": "default"
+          },
+          "malam,selamat": {
+            "intent": "salam Malam",
+            "domain": "default"
+          },
+          "imaksaih": {
+            "intent": "Teimakasih",
+            "domain": "default"
+          },
+          "kasih,trima": {
+            "intent": "Teimakasih",
+            "domain": "default"
+          },
+          "ima,kasi": {
+            "intent": "Teimakasih",
+            "domain": "default"
+          },
+          "ima,kasik": {
+            "intent": "Teimakasih",
+            "domain": "default"
+          },
+          "trimakasi": {
+            "intent": "Teimakasih",
+            "domain": "default"
+          },
+          "imah,kasih": {
+            "intent": "Teimakasih",
+            "domain": "default"
+          },
+          "makasih,teri": {
+            "intent": "Teimakasih",
+            "domain": "default"
+          },
+          "kasih,treama": {
+            "intent": "Teimakasih",
+            "domain": "default"
+          },
+          "thxmakasih": {
+            "intent": "Teimakasih",
+            "domain": "default"
+          },
+          "tremakasih": {
+            "intent": "Teimakasih",
+            "domain": "default"
+          },
+          "alaikum,asala,asalamualaikum,assal,assalammualaikum,assalammualikum,assalamuaikum,assalamuailakum,assalamualaikum,assalamualakum,assalamualikum,assalamuallaikum,assalamulaikum": {
+            "intent": "Salam",
+            "domain": "default"
+          },
+          "ass": {
+            "intent": "Salam",
+            "domain": "default"
+          },
+          "assalamualaikum,wabarakatuh,warahmatullah": {
+            "intent": "Salam",
+            "domain": "default"
+          },
+          "tanya": {
+            "intent": "question",
+            "domain": "default"
+          },
+          "berta": {
+            "intent": "question",
+            "domain": "default"
+          },
+          "info": {
+            "intent": "question",
+            "domain": "default"
+          },
+          "informasi": {
+            "intent": "question",
+            "domain": "default"
+          },
+          "perta": {
+            "intent": "question",
+            "domain": "default"
+          },
+          "jadwal": {
+            "intent": "question",
+            "domain": "default"
+          },
+          "informasi,kamar,tersedia": {
+            "intent": "question",
+            "domain": "default"
+          },
+          "visi": {
+            "intent": "question.visiMisi",
+            "domain": "default"
+          },
+          "layan": {
+            "intent": "question.layanan",
+            "domain": "default"
+          },
+          "fasilitas": {
+            "intent": "question.layanan",
+            "domain": "default"
+          },
+          "adu": {
+            "intent": "question.pengaduan",
+            "domain": "default"
+          },
+          "lapor": {
+            "intent": "question.pengaduan",
+            "domain": "default"
+          },
+          "aduan": {
+            "intent": "question.pengaduan",
+            "domain": "default"
+          },
+          "daftar": {
+            "intent": "register",
+            "domain": "default"
+          },
+          "registrasi": {
+            "intent": "register",
+            "domain": "default"
+          },
+          "regis": {
+            "intent": "register",
+            "domain": "default"
+          },
+          "jumpa,sampa": {
+            "intent": "goodbye",
+            "domain": "default"
+          },
+          "bye": {
+            "intent": "goodbye",
+            "domain": "default"
+          },
+          "dadah": {
+            "intent": "goodbye",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "greeting": "default",
+          "ping": "default",
+          "salam Pagi": "default",
+          "salam Siang": "default",
+          "salam Malam": "default",
+          "Teimakasih": "default",
+          "Salam": "default",
+          "question": "default",
+          "question.visiMisi": "default",
+          "question.layanan": "default",
+          "question.pengaduan": "default",
+          "register": "default",
+          "goodbye": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "Halo hallo",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "Hai haii haaii",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "apakabar?",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "Permisi",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "p",
+            "intent": "ping"
+          },
+          {
+            "domain": "default",
+            "utterance": "ping",
+            "intent": "ping"
+          },
+          {
+            "domain": "default",
+            "utterance": "Selamat Pagi",
+            "intent": "salam Pagi"
+          },
+          {
+            "domain": "default",
+            "utterance": "Selamat Siang",
+            "intent": "salam Siang"
+          },
+          {
+            "domain": "default",
+            "utterance": "Selamat Malam",
+            "intent": "salam Malam"
+          },
+          {
+            "domain": "default",
+            "utterance": "Terimaksaih",
+            "intent": "Teimakasih"
+          },
+          {
+            "domain": "default",
+            "utterance": "Trima kasih",
+            "intent": "Teimakasih"
+          },
+          {
+            "domain": "default",
+            "utterance": "Terima kasi",
+            "intent": "Teimakasih"
+          },
+          {
+            "domain": "default",
+            "utterance": "Terima kasik",
+            "intent": "Teimakasih"
+          },
+          {
+            "domain": "default",
+            "utterance": "Trimakasi",
+            "intent": "Teimakasih"
+          },
+          {
+            "domain": "default",
+            "utterance": "Terimah kasih",
+            "intent": "Teimakasih"
+          },
+          {
+            "domain": "default",
+            "utterance": "Teri makasih",
+            "intent": "Teimakasih"
+          },
+          {
+            "domain": "default",
+            "utterance": "Treama kasih",
+            "intent": "Teimakasih"
+          },
+          {
+            "domain": "default",
+            "utterance": "Thxmakasih",
+            "intent": "Teimakasih"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tremakasih",
+            "intent": "Teimakasih"
+          },
+          {
+            "domain": "default",
+            "utterance": "Assalamualaikum assalamuaikum Asalamualaikum Assalammualaikum Assalamuallaikum Assalamualikum Assalamualakum Assalmu'alaikum Asalamu'alaikum Assalammualikum Assalamuailakum Assalamulaikum",
+            "intent": "Salam"
+          },
+          {
+            "domain": "default",
+            "utterance": "Ass",
+            "intent": "Salam"
+          },
+          {
+            "domain": "default",
+            "utterance": "Assalamualaikum warahmatullahi wabarakatuh",
+            "intent": "Salam"
+          },
+          {
+            "domain": "default",
+            "utterance": "tanya",
+            "intent": "question"
+          },
+          {
+            "domain": "default",
+            "utterance": "Bertanya",
+            "intent": "question"
+          },
+          {
+            "domain": "default",
+            "utterance": "info",
+            "intent": "question"
+          },
+          {
+            "domain": "default",
+            "utterance": "Informasi",
+            "intent": "question"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tanya",
+            "intent": "question"
+          },
+          {
+            "domain": "default",
+            "utterance": "Pertanyaan",
+            "intent": "question"
+          },
+          {
+            "domain": "default",
+            "utterance": "Pertanya",
+            "intent": "question"
+          },
+          {
+            "domain": "default",
+            "utterance": "Jadwal",
+            "intent": "question"
+          },
+          {
+            "domain": "default",
+            "utterance": "informasi ketersediaan kamar",
+            "intent": "question"
+          },
+          {
+            "domain": "default",
+            "utterance": "visi",
+            "intent": "question.visiMisi"
+          },
+          {
+            "domain": "default",
+            "utterance": "misi",
+            "intent": "question.visiMisi"
+          },
+          {
+            "domain": "default",
+            "utterance": "layanan",
+            "intent": "question.layanan"
+          },
+          {
+            "domain": "default",
+            "utterance": "Fasilitas",
+            "intent": "question.layanan"
+          },
+          {
+            "domain": "default",
+            "utterance": "pengaduan",
+            "intent": "question.pengaduan"
+          },
+          {
+            "domain": "default",
+            "utterance": "laporan",
+            "intent": "question.pengaduan"
+          },
+          {
+            "domain": "default",
+            "utterance": "Lapor",
+            "intent": "question.pengaduan"
+          },
+          {
+            "domain": "default",
+            "utterance": "mengaduan",
+            "intent": "question.pengaduan"
+          },
+          {
+            "domain": "default",
+            "utterance": "melapor",
+            "intent": "question.pengaduan"
+          },
+          {
+            "domain": "default",
+            "utterance": "mendaftar",
+            "intent": "register"
+          },
+          {
+            "domain": "default",
+            "utterance": "daftar",
+            "intent": "register"
+          },
+          {
+            "domain": "default",
+            "utterance": "Registrasi",
+            "intent": "register"
+          },
+          {
+            "domain": "default",
+            "utterance": "regis",
+            "intent": "register"
+          },
+          {
+            "domain": "default",
+            "utterance": "Sampai jumpa",
+            "intent": "goodbye"
+          },
+          {
+            "domain": "default",
+            "utterance": "Bye",
+            "intent": "goodbye"
+          },
+          {
+            "domain": "default",
+            "utterance": "Dadah",
+            "intent": "goodbye"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "id",
+              "tag": "nlu-id",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "halo": 1,
+              "hallo": 1,
+              "hai": 1,
+              "haai": 1,
+              "apakabar": 1,
+              "misi": 1,
+              "p": 1,
+              "ping": 1,
+              "selamat": 1,
+              "pagi": 1,
+              "siang": 1,
+              "malam": 1,
+              "imaksaih": 1,
+              "trima": 1,
+              "kasih": 1,
+              "ima": 1,
+              "kasi": 1,
+              "kasik": 1,
+              "trimakasi": 1,
+              "imah": 1,
+              "teri": 1,
+              "makasih": 1,
+              "treama": 1,
+              "thxmakasih": 1,
+              "tremakasih": 1,
+              "assalamualaikum": 1,
+              "assalamuaikum": 1,
+              "asalamualaikum": 1,
+              "assalammualaikum": 1,
+              "assalamuallaikum": 1,
+              "assalamualikum": 1,
+              "assalamualakum": 1,
+              "assal": 1,
+              "alaikum": 1,
+              "asala": 1,
+              "assalammualikum": 1,
+              "assalamuailakum": 1,
+              "assalamulaikum": 1,
+              "ass": 1,
+              "warahmatullah": 1,
+              "wabarakatuh": 1,
+              "tanya": 1,
+              "berta": 1,
+              "info": 1,
+              "informasi": 1,
+              "perta": 1,
+              "jadwal": 1,
+              "tersedia": 1,
+              "kamar": 1,
+              "visi": 1,
+              "layan": 1,
+              "fasilitas": 1,
+              "adu": 1,
+              "lapor": 1,
+              "aduan": 1,
+              "daftar": 1,
+              "registrasi": 1,
+              "regis": 1,
+              "sampa": 1,
+              "jumpa": 1,
+              "bye": 1,
+              "dadah": 1
+            },
+            "intents": {
+              "greeting": 1,
+              "ping": 1,
+              "salam Pagi": 1,
+              "salam Siang": 1,
+              "salam Malam": 1,
+              "Teimakasih": 1,
+              "Salam": 1,
+              "question": 1,
+              "question.visiMisi": 1,
+              "question.layanan": 1,
+              "question.pengaduan": 1,
+              "register": 1,
+              "goodbye": 1
+            },
+            "intentFeatures": {
+              "greeting": {
+                "halo": 1,
+                "hallo": 1,
+                "hai": 1,
+                "haai": 1,
+                "apakabar": 1,
+                "misi": 1
+              },
+              "ping": {
+                "p": 1,
+                "ping": 1
+              },
+              "salam Pagi": {
+                "selamat": 1,
+                "pagi": 1
+              },
+              "salam Siang": {
+                "selamat": 1,
+                "siang": 1
+              },
+              "salam Malam": {
+                "selamat": 1,
+                "malam": 1
+              },
+              "Teimakasih": {
+                "imaksaih": 1,
+                "trima": 1,
+                "kasih": 1,
+                "ima": 1,
+                "kasi": 1,
+                "kasik": 1,
+                "trimakasi": 1,
+                "imah": 1,
+                "teri": 1,
+                "makasih": 1,
+                "treama": 1,
+                "thxmakasih": 1,
+                "tremakasih": 1
+              },
+              "Salam": {
+                "assalamualaikum": 1,
+                "assalamuaikum": 1,
+                "asalamualaikum": 1,
+                "assalammualaikum": 1,
+                "assalamuallaikum": 1,
+                "assalamualikum": 1,
+                "assalamualakum": 1,
+                "assal": 1,
+                "alaikum": 1,
+                "asala": 1,
+                "assalammualikum": 1,
+                "assalamuailakum": 1,
+                "assalamulaikum": 1,
+                "ass": 1,
+                "warahmatullah": 1,
+                "wabarakatuh": 1
+              },
+              "question": {
+                "tanya": 1,
+                "berta": 1,
+                "info": 1,
+                "informasi": 1,
+                "perta": 1,
+                "jadwal": 1,
+                "tersedia": 1,
+                "kamar": 1
+              },
+              "question.visiMisi": {
+                "visi": 1,
+                "misi": 1
+              },
+              "question.layanan": {
+                "layan": 1,
+                "fasilitas": 1
+              },
+              "question.pengaduan": {
+                "adu": 1,
+                "lapor": 1,
+                "aduan": 1
+              },
+              "register": {
+                "daftar": 1,
+                "registrasi": 1,
+                "regis": 1
+              },
+              "goodbye": {
+                "sampa": 1,
+                "jumpa": 1,
+                "bye": 1,
+                "dadah": 1
+              }
+            },
+            "featuresToIntent": {
+              "halo": [
+                "greeting"
+              ],
+              "hallo": [
+                "greeting"
+              ],
+              "hai": [
+                "greeting"
+              ],
+              "haai": [
+                "greeting"
+              ],
+              "apakabar": [
+                "greeting"
+              ],
+              "misi": [
+                "greeting",
+                "question.visiMisi"
+              ],
+              "p": [
+                "ping"
+              ],
+              "ping": [
+                "ping"
+              ],
+              "selamat": [
+                "salam Pagi",
+                "salam Siang",
+                "salam Malam"
+              ],
+              "pagi": [
+                "salam Pagi"
+              ],
+              "siang": [
+                "salam Siang"
+              ],
+              "malam": [
+                "salam Malam"
+              ],
+              "imaksaih": [
+                "Teimakasih"
+              ],
+              "trima": [
+                "Teimakasih"
+              ],
+              "kasih": [
+                "Teimakasih"
+              ],
+              "ima": [
+                "Teimakasih"
+              ],
+              "kasi": [
+                "Teimakasih"
+              ],
+              "kasik": [
+                "Teimakasih"
+              ],
+              "trimakasi": [
+                "Teimakasih"
+              ],
+              "imah": [
+                "Teimakasih"
+              ],
+              "teri": [
+                "Teimakasih"
+              ],
+              "makasih": [
+                "Teimakasih"
+              ],
+              "treama": [
+                "Teimakasih"
+              ],
+              "thxmakasih": [
+                "Teimakasih"
+              ],
+              "tremakasih": [
+                "Teimakasih"
+              ],
+              "assalamualaikum": [
+                "Salam"
+              ],
+              "assalamuaikum": [
+                "Salam"
+              ],
+              "asalamualaikum": [
+                "Salam"
+              ],
+              "assalammualaikum": [
+                "Salam"
+              ],
+              "assalamuallaikum": [
+                "Salam"
+              ],
+              "assalamualikum": [
+                "Salam"
+              ],
+              "assalamualakum": [
+                "Salam"
+              ],
+              "assal": [
+                "Salam"
+              ],
+              "alaikum": [
+                "Salam"
+              ],
+              "asala": [
+                "Salam"
+              ],
+              "assalammualikum": [
+                "Salam"
+              ],
+              "assalamuailakum": [
+                "Salam"
+              ],
+              "assalamulaikum": [
+                "Salam"
+              ],
+              "ass": [
+                "Salam"
+              ],
+              "warahmatullah": [
+                "Salam"
+              ],
+              "wabarakatuh": [
+                "Salam"
+              ],
+              "tanya": [
+                "question"
+              ],
+              "berta": [
+                "question"
+              ],
+              "info": [
+                "question"
+              ],
+              "informasi": [
+                "question"
+              ],
+              "perta": [
+                "question"
+              ],
+              "jadwal": [
+                "question"
+              ],
+              "tersedia": [
+                "question"
+              ],
+              "kamar": [
+                "question"
+              ],
+              "visi": [
+                "question.visiMisi"
+              ],
+              "layan": [
+                "question.layanan"
+              ],
+              "fasilitas": [
+                "question.layanan"
+              ],
+              "adu": [
+                "question.pengaduan"
+              ],
+              "lapor": [
+                "question.pengaduan"
+              ],
+              "aduan": [
+                "question.pengaduan"
+              ],
+              "daftar": [
+                "register"
+              ],
+              "registrasi": [
+                "register"
+              ],
+              "regis": [
+                "register"
+              ],
+              "sampa": [
+                "goodbye"
+              ],
+              "jumpa": [
+                "goodbye"
+              ],
+              "bye": [
+                "goodbye"
+              ],
+              "dadah": [
+                "goodbye"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "id",
+                "tag": "nlu-id",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "halo",
+                "hallo",
+                "hai",
+                "haai",
+                "apakabar",
+                "misi",
+                "p",
+                "ping",
+                "selamat",
+                "pagi",
+                "siang",
+                "malam",
+                "imaksaih",
+                "trima",
+                "kasih",
+                "ima",
+                "kasi",
+                "kasik",
+                "trimakasi",
+                "imah",
+                "teri",
+                "makasih",
+                "treama",
+                "thxmakasih",
+                "tremakasih",
+                "assalamualaikum",
+                "assalamuaikum",
+                "asalamualaikum",
+                "assalammualaikum",
+                "assalamuallaikum",
+                "assalamualikum",
+                "assalamualakum",
+                "assal",
+                "alaikum",
+                "asala",
+                "assalammualikum",
+                "assalamuailakum",
+                "assalamulaikum",
+                "ass",
+                "warahmatullah",
+                "wabarakatuh",
+                "tanya",
+                "berta",
+                "info",
+                "informasi",
+                "perta",
+                "jadwal",
+                "tersedia",
+                "kamar",
+                "visi",
+                "layan",
+                "fasilitas",
+                "adu",
+                "lapor",
+                "aduan",
+                "daftar",
+                "registrasi",
+                "regis",
+                "sampa",
+                "jumpa",
+                "bye",
+                "dadah"
+              ],
+              "intents": [
+                "greeting",
+                "ping",
+                "salam Pagi",
+                "salam Siang",
+                "salam Malam",
+                "Teimakasih",
+                "Salam",
+                "question",
+                "question.visiMisi",
+                "question.layanan",
+                "question.pengaduan",
+                "register",
+                "goodbye"
+              ],
+              "perceptrons": [
+                [
+                  6.709762096405029,
+                  6.709762096405029,
+                  6.7098612785339355,
+                  6.7098612785339355,
+                  13.303922653198242,
+                  6.019138813018799,
+                  -1.2641541957855225,
+                  -1.2474513053894043,
+                  -1.359340786933899,
+                  -0.4698675274848938,
+                  -0.4233834445476532,
+                  -0.39360517263412476,
+                  -1.2236026525497437,
+                  -0.471897155046463,
+                  -1.2147783041000366,
+                  -1.06585693359375,
+                  -0.5426409244537354,
+                  -0.4921853840351105,
+                  -1.203201174736023,
+                  -0.37053054571151733,
+                  -0.6989876627922058,
+                  -0.6989876627922058,
+                  -0.32323941588401794,
+                  -1.1885453462600708,
+                  -1.1825673580169678,
+                  -0.5696871876716614,
+                  -0.1234370693564415,
+                  -0.1234370693564415,
+                  -0.1234370693564415,
+                  -0.1234370693564415,
+                  -0.1234370693564415,
+                  -0.1234370693564415,
+                  -0.1234370693564415,
+                  -0.1234370693564415,
+                  -0.1234370693564415,
+                  -0.1234370693564415,
+                  -0.1234370693564415,
+                  -0.1234370693564415,
+                  -1.177791714668274,
+                  -0.4148608148097992,
+                  -0.4148608148097992,
+                  -1.2688369750976562,
+                  -1.1731011867523193,
+                  -1.170835018157959,
+                  -1.1726200580596924,
+                  -1.1675442457199097,
+                  -1.1656339168548584,
+                  -0.23412512242794037,
+                  -0.23412512242794037,
+                  -1.1634202003479004,
+                  -0.868429958820343,
+                  -0.8668574690818787,
+                  -0.8651672005653381,
+                  -0.8722898960113525,
+                  -0.8628000617027283,
+                  -0.8712641000747681,
+                  -0.859596848487854,
+                  -0.8573504090309143,
+                  -0.4346802830696106,
+                  -0.4346802830696106,
+                  -0.8543921113014221,
+                  -0.8518534302711487,
+                  0.8694095269826758
+                ],
+                [
+                  -0.42243194580078125,
+                  -0.42243194580078125,
+                  -0.42223334312438965,
+                  -0.42223334312438965,
+                  -0.8162201642990112,
+                  -0.851128876209259,
+                  13.336485862731934,
+                  13.321545600891113,
+                  -0.8596600294113159,
+                  -0.29822441935539246,
+                  -0.2784256041049957,
+                  -0.25181397795677185,
+                  -0.885162353515625,
+                  -0.3099309206008911,
+                  -0.7926344275474548,
+                  -0.7040923237800598,
+                  -0.35954558849334717,
+                  -0.33437514305114746,
+                  -0.8755325675010681,
+                  -0.2505650222301483,
+                  -0.48645806312561035,
+                  -0.48645806312561035,
+                  -0.2190304547548294,
+                  -0.8684097528457642,
+                  -0.864932119846344,
+                  -0.37802839279174805,
+                  -0.06810932606458664,
+                  -0.06810932606458664,
+                  -0.06810932606458664,
+                  -0.06810932606458664,
+                  -0.06810932606458664,
+                  -0.06810932606458664,
+                  -0.06810932606458664,
+                  -0.06810932606458664,
+                  -0.06810932606458664,
+                  -0.06810932606458664,
+                  -0.06810932606458664,
+                  -0.06810932606458664,
+                  -0.8619166016578674,
+                  -0.28729888796806335,
+                  -0.28729888796806335,
+                  -0.8984714150428772,
+                  -0.8587384819984436,
+                  -0.85711270570755,
+                  -0.8575257658958435,
+                  -0.8542017936706543,
+                  -0.8524867296218872,
+                  -0.15630140900611877,
+                  -0.15630140900611877,
+                  -0.8505479097366333,
+                  -0.847017228603363,
+                  -0.8448078036308289,
+                  -0.8424729108810425,
+                  -0.8540719151496887,
+                  -0.8391430377960205,
+                  -0.8522635698318481,
+                  -0.8346531391143799,
+                  -0.8317140936851501,
+                  -0.4247739315032959,
+                  -0.4247739315032959,
+                  -0.8277974128723145,
+                  -0.8245586156845093,
+                  0.8496013582637099
+                ],
+                [
+                  -0.045486755669116974,
+                  -0.045486755669116974,
+                  -0.045485641807317734,
+                  -0.045485641807317734,
+                  -0.09001046419143677,
+                  -0.09577053785324097,
+                  -0.08978946506977081,
+                  -0.08956883102655411,
+                  3.5003151893615723,
+                  10.618998527526855,
+                  -3.5649640560150146,
+                  -3.556070327758789,
+                  -0.12599976360797882,
+                  -0.07009625434875488,
+                  -0.18943652510643005,
+                  -0.15455977618694305,
+                  -0.07383259385824203,
+                  -0.06612763553857803,
+                  -0.11827569454908371,
+                  -0.054507091641426086,
+                  -0.08215949684381485,
+                  -0.08215949684381485,
+                  -0.045409999787807465,
+                  -0.11126048862934113,
+                  -0.10807066410779953,
+                  -0.08453012257814407,
+                  -0.024926364421844482,
+                  -0.024926364421844482,
+                  -0.024926364421844482,
+                  -0.024926364421844482,
+                  -0.024926364421844482,
+                  -0.024926364421844482,
+                  -0.024926364421844482,
+                  -0.024926364421844482,
+                  -0.024926364421844482,
+                  -0.024926364421844482,
+                  -0.024926364421844482,
+                  -0.024926364421844482,
+                  -0.10563009232282639,
+                  -0.04912098869681358,
+                  -0.04912098869681358,
+                  -0.15464447438716888,
+                  -0.10094156861305237,
+                  -0.09913189709186554,
+                  -0.11208800226449966,
+                  -0.09491913765668869,
+                  -0.09368959069252014,
+                  -0.03282369300723076,
+                  -0.03282369300723076,
+                  -0.09243054687976837,
+                  -0.0915469154715538,
+                  -0.09127463400363922,
+                  -0.09112254530191422,
+                  -0.11180423945188522,
+                  -0.09098286181688309,
+                  -0.09618799388408661,
+                  -0.0907985046505928,
+                  -0.09066890180110931,
+                  -0.04698335751891136,
+                  -0.04698335751891136,
+                  -0.09049700200557709,
+                  -0.09033932536840439,
+                  0.09098847350209369
+                ],
+                [
+                  -0.045289237052202225,
+                  -0.045289237052202225,
+                  -0.04522272199392319,
+                  -0.04522272199392319,
+                  -0.07273579388856888,
+                  -0.10041367262601852,
+                  -0.07224443554878235,
+                  -0.07199341058731079,
+                  3.5183513164520264,
+                  -3.5450425148010254,
+                  10.623507499694824,
+                  -3.5603177547454834,
+                  -0.139637291431427,
+                  -0.07898600399494171,
+                  -0.21333880722522736,
+                  -0.17415152490139008,
+                  -0.08320120722055435,
+                  -0.07451413571834564,
+                  -0.12692135572433472,
+                  -0.06141449883580208,
+                  -0.09215714037418365,
+                  -0.09215714037418365,
+                  -0.05116140469908714,
+                  -0.11940789222717285,
+                  -0.11574285477399826,
+                  -0.09541533887386322,
+                  -0.0281415656208992,
+                  -0.0281415656208992,
+                  -0.0281415656208992,
+                  -0.0281415656208992,
+                  -0.0281415656208992,
+                  -0.0281415656208992,
+                  -0.0281415656208992,
+                  -0.0281415656208992,
+                  -0.0281415656208992,
+                  -0.0281415656208992,
+                  -0.0281415656208992,
+                  -0.0281415656208992,
+                  -0.11109945923089981,
+                  -0.05534378066658974,
+                  -0.05534378066658974,
+                  -0.17289796471595764,
+                  -0.10608363151550293,
+                  -0.103012815117836,
+                  -0.12215466052293777,
+                  -0.09679412096738815,
+                  -0.09415420889854431,
+                  -0.03698473796248436,
+                  -0.03698473796248436,
+                  -0.09167840331792831,
+                  -0.08749139308929443,
+                  -0.08611184358596802,
+                  -0.08405686169862747,
+                  -0.12259717285633087,
+                  -0.08098433911800385,
+                  -0.10098668187856674,
+                  -0.07769905030727386,
+                  -0.07650966942310333,
+                  -0.049084123224020004,
+                  -0.049084123224020004,
+                  -0.07488785684108734,
+                  -0.07403375953435898,
+                  0.07172587991135262
+                ],
+                [
+                  -0.047725509852170944,
+                  -0.047725509852170944,
+                  -0.046605661511421204,
+                  -0.046605661511421204,
+                  -0.06650412082672119,
+                  -0.10778805613517761,
+                  -0.0642327144742012,
+                  -0.06259209662675858,
+                  3.578745126724243,
+                  -3.53570294380188,
+                  -3.525637626647949,
+                  10.642780303955078,
+                  -0.14866897463798523,
+                  -0.08816360682249069,
+                  -0.23709513247013092,
+                  -0.1944444626569748,
+                  -0.09281854331493378,
+                  -0.08312743902206421,
+                  -0.13976311683654785,
+                  -0.06028413400053978,
+                  -0.10250148177146912,
+                  -0.10250148177146912,
+                  -0.05722709745168686,
+                  -0.12743085622787476,
+                  -0.12323953211307526,
+                  -0.10645829886198044,
+                  -0.03125510364770889,
+                  -0.03125510364770889,
+                  -0.03125510364770889,
+                  -0.03125510364770889,
+                  -0.03125510364770889,
+                  -0.03125510364770889,
+                  -0.03125510364770889,
+                  -0.03125510364770889,
+                  -0.03125510364770889,
+                  -0.03125510364770889,
+                  -0.03125510364770889,
+                  -0.03125510364770889,
+                  -0.12126506119966507,
+                  -0.061738837510347366,
+                  -0.061738837510347366,
+                  -0.192050039768219,
+                  -0.1131148636341095,
+                  -0.10960428416728973,
+                  -0.13490049540996552,
+                  -0.10260672867298126,
+                  -0.0996127724647522,
+                  -0.04124895855784416,
+                  -0.04124895855784416,
+                  -0.09544640779495239,
+                  -0.09033210575580597,
+                  -0.0876527801156044,
+                  -0.08670298010110855,
+                  -0.1350867599248886,
+                  -0.08185268938541412,
+                  -0.10890156030654907,
+                  -0.07702020555734634,
+                  -0.0749899223446846,
+                  -0.05211147293448448,
+                  -0.05211147293448448,
+                  -0.071684330701828,
+                  -0.06976578384637833,
+                  -0.007030147259608028
+                ],
+                [
+                  -1.2720779180526733,
+                  -1.2720779180526733,
+                  -1.2718974351882935,
+                  -1.2718974351882935,
+                  -2.495624303817749,
+                  -2.5612733364105225,
+                  -2.487182140350342,
+                  -2.4787192344665527,
+                  -1.902514100074768,
+                  -0.6368073225021362,
+                  -0.6340604424476624,
+                  -0.631056010723114,
+                  11.681816101074219,
+                  2.956480026245117,
+                  8.808359146118164,
+                  7.832254886627197,
+                  3.9186720848083496,
+                  3.9140822887420654,
+                  11.669981956481934,
+                  2.9307925701141357,
+                  5.87261962890625,
+                  5.87261962890625,
+                  2.9221062660217285,
+                  11.638643264770508,
+                  11.613946914672852,
+                  -1.5851101875305176,
+                  -0.3790384829044342,
+                  -0.3790384829044342,
+                  -0.3790384829044342,
+                  -0.3790384829044342,
+                  -0.3790384829044342,
+                  -0.3790384829044342,
+                  -0.3790384829044342,
+                  -0.3790384829044342,
+                  -0.3790384829044342,
+                  -0.3790384829044342,
+                  -0.3790384829044342,
+                  -0.3790384829044342,
+                  -2.6327452659606934,
+                  -1.0180617570877075,
+                  -1.0180617570877075,
+                  -3.076399803161621,
+                  -2.6033403873443604,
+                  -2.588942766189575,
+                  -2.6270928382873535,
+                  -2.5693485736846924,
+                  -2.5625686645507812,
+                  -0.6182446479797363,
+                  -0.6182446479797363,
+                  -2.556976318359375,
+                  -2.5513434410095215,
+                  -2.547611951828003,
+                  -2.543541431427002,
+                  -2.572141170501709,
+                  -2.537862777709961,
+                  -2.5578620433807373,
+                  -2.5301337242126465,
+                  -2.524472236633301,
+                  -1.275246024131775,
+                  -1.275246024131775,
+                  -2.5171337127685547,
+                  -2.510620594024658,
+                  2.5472452312731715
+                ],
+                [
+                  -0.2952849864959717,
+                  -0.2952849864959717,
+                  -0.2952525317668915,
+                  -0.2952525317668915,
+                  -0.5824567079544067,
+                  -0.5998395681381226,
+                  -0.5808055400848389,
+                  -0.5791425108909607,
+                  -0.4417042136192322,
+                  -0.14783604443073273,
+                  -0.14717654883861542,
+                  -0.1466396003961563,
+                  -0.5768725872039795,
+                  -0.15242931246757507,
+                  -0.4420846700668335,
+                  -0.3919023275375366,
+                  -0.1963411569595337,
+                  -0.19550329446792603,
+                  -0.5742891430854797,
+                  -0.14540353417396545,
+                  -0.29300206899642944,
+                  -0.29300206899642944,
+                  -0.14408710598945618,
+                  -0.5711395144462585,
+                  -0.568952202796936,
+                  5.045557022094727,
+                  0.7211799621582031,
+                  0.7211799621582031,
+                  0.7211799621582031,
+                  0.7211799621582031,
+                  0.7211799621582031,
+                  0.7211799621582031,
+                  0.7211799621582031,
+                  0.7211799621582031,
+                  0.7211799621582031,
+                  0.7211799621582031,
+                  0.7211799621582031,
+                  0.7211799621582031,
+                  13.593812942504883,
+                  4.32436466217041,
+                  4.32436466217041,
+                  -0.7795957326889038,
+                  -0.6150909066200256,
+                  -0.6103021502494812,
+                  -0.6351056098937988,
+                  -0.6020167469978333,
+                  -0.5990809798240662,
+                  -0.17046640813350677,
+                  -0.17046640813350677,
+                  -0.5962072610855103,
+                  -0.5933098196983337,
+                  -0.5920096635818481,
+                  -0.5910533666610718,
+                  -0.6137824058532715,
+                  -0.5900512933731079,
+                  -0.5987396240234375,
+                  -0.5886436104774475,
+                  -0.5876105427742004,
+                  -0.2969696521759033,
+                  -0.2969696521759033,
+                  -0.5862674713134766,
+                  -0.5850422382354736,
+                  0.5900356674436756
+                ],
+                [
+                  -1.3095130920410156,
+                  -1.3095130920410156,
+                  -1.3095000982284546,
+                  -1.3095000982284546,
+                  -2.5881998538970947,
+                  -2.6834933757781982,
+                  -2.581387996673584,
+                  -2.5745322704315186,
+                  -1.960143804550171,
+                  -0.6555601358413696,
+                  -0.6532636880874634,
+                  -0.65108722448349,
+                  -2.5652127265930176,
+                  -0.6810994744300842,
+                  -1.9640917778015137,
+                  -1.7395069599151611,
+                  -0.8712877035140991,
+                  -0.8679307699203491,
+                  -2.5545637607574463,
+                  -0.6436598896980286,
+                  -1.300831913948059,
+                  -1.300831913948059,
+                  -0.6383163332939148,
+                  -2.541578769683838,
+                  -2.5324227809906006,
+                  -0.9610182642936707,
+                  -0.13789257407188416,
+                  -0.13789257407188416,
+                  -0.13789257407188416,
+                  -0.13789257407188416,
+                  -0.13789257407188416,
+                  -0.13789257407188416,
+                  -0.13789257407188416,
+                  -0.13789257407188416,
+                  -0.13789257407188416,
+                  -0.13789257407188416,
+                  -0.13789257407188416,
+                  -0.13789257407188416,
+                  -2.5228333473205566,
+                  -0.8157064318656921,
+                  -0.8157064318656921,
+                  11.6767578125,
+                  11.645078659057617,
+                  11.626145362854004,
+                  11.303641319274902,
+                  11.567255973815918,
+                  11.543314933776855,
+                  0.24230307340621948,
+                  0.24230307340621948,
+                  -2.6518867015838623,
+                  -2.634207248687744,
+                  -2.6273818016052246,
+                  -2.6229307651519775,
+                  -2.8317348957061768,
+                  -2.618769884109497,
+                  -2.6795217990875244,
+                  -2.6130905151367188,
+                  -2.608952283859253,
+                  -1.322318434715271,
+                  -1.322318434715271,
+                  -2.60355281829834,
+                  -2.5985829830169678,
+                  2.6190542321589034
+                ],
+                [
+                  -0.4182441830635071,
+                  -0.4182441830635071,
+                  -0.4176965057849884,
+                  -0.4176965057849884,
+                  -0.8158679008483887,
+                  6.5687031745910645,
+                  -0.5214573740959167,
+                  -0.5204030275344849,
+                  -0.3979632258415222,
+                  -0.13759982585906982,
+                  -0.13142573833465576,
+                  -0.12835317850112915,
+                  -0.5189952254295349,
+                  -0.14448735117912292,
+                  -0.3978326618671417,
+                  -0.3503715693950653,
+                  -0.17639833688735962,
+                  -0.17385193705558777,
+                  -0.5173473358154297,
+                  -0.12730014324188232,
+                  -0.2617160975933075,
+                  -0.2617160975933075,
+                  -0.12557846307754517,
+                  -0.5153887271881104,
+                  -0.5138682126998901,
+                  -0.1975005567073822,
+                  -0.030934475362300873,
+                  -0.030934475362300873,
+                  -0.030934475362300873,
+                  -0.030934475362300873,
+                  -0.030934475362300873,
+                  -0.030934475362300873,
+                  -0.030934475362300873,
+                  -0.030934475362300873,
+                  -0.030934475362300873,
+                  -0.030934475362300873,
+                  -0.030934475362300873,
+                  -0.030934475362300873,
+                  -0.512252926826477,
+                  -0.1621689349412918,
+                  -0.1621689349412918,
+                  -0.5198522806167603,
+                  -0.5098358988761902,
+                  -0.5080342292785645,
+                  -0.5070517063140869,
+                  -0.50395667552948,
+                  -0.5019118189811707,
+                  -0.07017636299133301,
+                  -0.07017636299133301,
+                  13.648954391479492,
+                  -0.8410950303077698,
+                  -0.8361600041389465,
+                  -0.8322495222091675,
+                  -0.9246222972869873,
+                  -0.8275869488716125,
+                  -0.8703665137290955,
+                  -0.8233874440193176,
+                  -0.8215546011924744,
+                  -0.4281857907772064,
+                  -0.4281857907772064,
+                  -0.8197432160377502,
+                  -0.8184062838554382,
+                  0.8193027378429067
+                ],
+                [
+                  -0.4567227065563202,
+                  -0.4567227065563202,
+                  -0.45479607582092285,
+                  -0.45479607582092285,
+                  -0.8660116195678711,
+                  -0.8655080199241638,
+                  -0.8630138039588928,
+                  -0.8611745834350586,
+                  -0.6635918021202087,
+                  -0.22835034132003784,
+                  -0.21987757086753845,
+                  -0.21456170082092285,
+                  -0.8586673140525818,
+                  -0.23941127955913544,
+                  -0.6603408455848694,
+                  -0.5833207964897156,
+                  -0.2945452332496643,
+                  -0.2885420620441437,
+                  -0.85573410987854,
+                  -0.21277761459350586,
+                  -0.43383342027664185,
+                  -0.43383342027664185,
+                  -0.20723888278007507,
+                  -0.8523005247116089,
+                  -0.8496351838111877,
+                  -0.3196764886379242,
+                  -0.04633225500583649,
+                  -0.04633225500583649,
+                  -0.04633225500583649,
+                  -0.04633225500583649,
+                  -0.04633225500583649,
+                  -0.04633225500583649,
+                  -0.04633225500583649,
+                  -0.04633225500583649,
+                  -0.04633225500583649,
+                  -0.04633225500583649,
+                  -0.04633225500583649,
+                  -0.04633225500583649,
+                  -0.8468111157417297,
+                  -0.2714379131793976,
+                  -0.2714379131793976,
+                  -0.859369695186615,
+                  -0.8426105380058289,
+                  -0.8394560813903809,
+                  -0.8376862406730652,
+                  -0.8323365449905396,
+                  -0.8287617564201355,
+                  -0.11347656697034836,
+                  -0.11347656697034836,
+                  -0.8249800205230713,
+                  13.327642440795898,
+                  13.312710762023926,
+                  -0.8972883820533752,
+                  -1.0330830812454224,
+                  -0.8882927298545837,
+                  -0.9598271250724792,
+                  -0.8793222308158875,
+                  -0.8756011724472046,
+                  -0.47137412428855896,
+                  -0.47137412428855896,
+                  -0.8714652061462402,
+                  -0.8689723610877991,
+                  0.8651329069705851
+                ],
+                [
+                  -0.7368013262748718,
+                  -0.7368013262748718,
+                  -0.7333636283874512,
+                  -0.7333636283874512,
+                  -1.2976922988891602,
+                  -1.2985559701919556,
+                  -1.2897650003433228,
+                  -1.286545753479004,
+                  -1.0693368911743164,
+                  -0.37658801674842834,
+                  -0.3491969406604767,
+                  -0.3270629346370697,
+                  -1.2835311889648438,
+                  -0.3908197283744812,
+                  -1.022294282913208,
+                  -0.9085423946380615,
+                  -0.46351107954978943,
+                  -0.43969932198524475,
+                  -1.2806901931762695,
+                  -0.3255155086517334,
+                  -0.6564844250679016,
+                  -0.6564844250679016,
+                  -0.2977697551250458,
+                  -1.2773948907852173,
+                  -1.2747386693954468,
+                  -0.502712070941925,
+                  -0.08948546648025513,
+                  -0.08948546648025513,
+                  -0.08948546648025513,
+                  -0.08948546648025513,
+                  -0.08948546648025513,
+                  -0.08948546648025513,
+                  -0.08948546648025513,
+                  -0.08948546648025513,
+                  -0.08948546648025513,
+                  -0.08948546648025513,
+                  -0.08948546648025513,
+                  -0.08948546648025513,
+                  -1.2718356847763062,
+                  -0.3924127221107483,
+                  -0.3924127221107483,
+                  -1.281753420829773,
+                  -1.2676622867584229,
+                  -1.2643085718154907,
+                  -1.263087272644043,
+                  -1.2568955421447754,
+                  -1.2529290914535522,
+                  -0.19752515852451324,
+                  -0.19752515852451324,
+                  -1.2486505508422852,
+                  -1.2441778182983398,
+                  -1.2396292686462402,
+                  12.913797378540039,
+                  13.005755424499512,
+                  12.892804145812988,
+                  -1.6072059869766235,
+                  -1.3432589769363403,
+                  -1.3314107656478882,
+                  -0.7808400392532349,
+                  -0.7808400392532349,
+                  -1.3167263269424438,
+                  -1.3089860677719116,
+                  1.282922645506604
+                ],
+                [
+                  -0.7873042225837708,
+                  -0.7873042225837708,
+                  -0.7753252983093262,
+                  -0.7753252983093262,
+                  -1.3180770874023438,
+                  -1.321244716644287,
+                  -1.302829384803772,
+                  -1.2960121631622314,
+                  -1.1456384658813477,
+                  -0.40450966358184814,
+                  -0.3746943473815918,
+                  -0.3465675413608551,
+                  -1.2883729934692383,
+                  -0.4184672236442566,
+                  -1.0784378051757812,
+                  -0.9600410461425781,
+                  -0.48960375785827637,
+                  -0.4614391624927521,
+                  -1.282482385635376,
+                  -0.3437150716781616,
+                  -0.6793594360351562,
+                  -0.6793594360351562,
+                  -0.30711546540260315,
+                  -1.278692603111267,
+                  -1.2765698432922363,
+                  -0.5203728079795837,
+                  -0.0930347740650177,
+                  -0.0930347740650177,
+                  -0.0930347740650177,
+                  -0.0930347740650177,
+                  -0.0930347740650177,
+                  -0.0930347740650177,
+                  -0.0930347740650177,
+                  -0.0930347740650177,
+                  -0.0930347740650177,
+                  -0.0930347740650177,
+                  -0.0930347740650177,
+                  -0.0930347740650177,
+                  -1.2741721868515015,
+                  -0.4029545485973358,
+                  -0.4029545485973358,
+                  -1.2897282838821411,
+                  -1.2707315683364868,
+                  -1.2678810358047485,
+                  -1.2674518823623657,
+                  -1.261580228805542,
+                  -1.2581053972244263,
+                  -0.2080157846212387,
+                  -0.2080157846212387,
+                  -1.2543015480041504,
+                  -1.2502985000610352,
+                  -1.2462186813354492,
+                  -1.2419546842575073,
+                  -1.2678393125534058,
+                  -1.2357155084609985,
+                  13.021843910217285,
+                  12.920332908630371,
+                  12.895069122314453,
+                  -0.8362719416618347,
+                  -0.8362719416618347,
+                  -1.3514058589935303,
+                  -1.3388512134552002,
+                  1.2780087578303048
+                ],
+                [
+                  -0.6850953102111816,
+                  -0.6850953102111816,
+                  -0.6813358664512634,
+                  -0.6813358664512634,
+                  -1.111809492111206,
+                  -1.117322564125061,
+                  -1.095434308052063,
+                  -1.0887094736099243,
+                  -1.013521671295166,
+                  -0.35068678855895996,
+                  -0.3276738226413727,
+                  -0.3026655316352844,
+                  -1.079705834388733,
+                  -0.3653150498867035,
+                  -0.9392023682594299,
+                  -0.8330840468406677,
+                  -0.42471858859062195,
+                  -0.3959933817386627,
+                  -1.0728079080581665,
+                  -0.29619506001472473,
+                  -0.5793004035949707,
+                  -0.5793004035949707,
+                  -0.26237303018569946,
+                  -1.0679460763931274,
+                  -1.0657258033752441,
+                  -0.4494912624359131,
+                  -0.08126738667488098,
+                  -0.08126738667488098,
+                  -0.08126738667488098,
+                  -0.08126738667488098,
+                  -0.08126738667488098,
+                  -0.08126738667488098,
+                  -0.08126738667488098,
+                  -0.08126738667488098,
+                  -0.08126738667488098,
+                  -0.08126738667488098,
+                  -0.08126738667488098,
+                  -0.08126738667488098,
+                  -1.0639495849609375,
+                  -0.34455546736717224,
+                  -0.34455546736717224,
+                  -1.0844749212265015,
+                  -1.061365008354187,
+                  -1.059222936630249,
+                  -1.059238076210022,
+                  -1.0544867515563965,
+                  -1.0518251657485962,
+                  -0.18432551622390747,
+                  -0.18432551622390747,
+                  -1.0488803386688232,
+                  -1.0457708835601807,
+                  -1.042598843574524,
+                  -1.0392712354660034,
+                  -1.0582151412963867,
+                  -1.0344440937042236,
+                  -1.0546077489852905,
+                  -1.0279490947723389,
+                  -1.0238672494888306,
+                  6.617575645446777,
+                  6.617575645446777,
+                  13.136618614196777,
+                  13.11150074005127,
+                  1.0644892850440377
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "id",
+        "Halo hallo"
+      ],
+      [
+        "id",
+        "Hai haii haaii"
+      ],
+      [
+        "id",
+        "apakabar?"
+      ],
+      [
+        "id",
+        "Permisi"
+      ],
+      [
+        "id",
+        "p"
+      ],
+      [
+        "id",
+        "ping"
+      ],
+      [
+        "id",
+        "Selamat Pagi"
+      ],
+      [
+        "id",
+        "Selamat Siang"
+      ],
+      [
+        "id",
+        "Selamat Malam"
+      ],
+      [
+        "id",
+        "Terimaksaih"
+      ],
+      [
+        "id",
+        "Trima kasih"
+      ],
+      [
+        "id",
+        "Terima kasi"
+      ],
+      [
+        "id",
+        "Terima kasik"
+      ],
+      [
+        "id",
+        "Trimakasi"
+      ],
+      [
+        "id",
+        "Terimah kasih"
+      ],
+      [
+        "id",
+        "Teri makasih"
+      ],
+      [
+        "id",
+        "Treama kasih"
+      ],
+      [
+        "id",
+        "Thxmakasih"
+      ],
+      [
+        "id",
+        "Tremakasih"
+      ],
+      [
+        "id",
+        "Assalamualaikum assalamuaikum Asalamualaikum Assalammualaikum Assalamuallaikum Assalamualikum Assalamualakum Assalmu'alaikum Asalamu'alaikum Assalammualikum Assalamuailakum Assalamulaikum"
+      ],
+      [
+        "id",
+        "Ass"
+      ],
+      [
+        "id",
+        "Assalamualaikum warahmatullahi wabarakatuh"
+      ],
+      [
+        "id",
+        "tanya"
+      ],
+      [
+        "id",
+        "Bertanya"
+      ],
+      [
+        "id",
+        "info"
+      ],
+      [
+        "id",
+        "Informasi"
+      ],
+      [
+        "id",
+        "Tanya"
+      ],
+      [
+        "id",
+        "Pertanyaan"
+      ],
+      [
+        "id",
+        "Pertanya"
+      ],
+      [
+        "id",
+        "Jadwal"
+      ],
+      [
+        "id",
+        "informasi ketersediaan kamar"
+      ],
+      [
+        "id",
+        "visi"
+      ],
+      [
+        "id",
+        "misi"
+      ],
+      [
+        "id",
+        "layanan"
+      ],
+      [
+        "id",
+        "Fasilitas"
+      ],
+      [
+        "id",
+        "pengaduan"
+      ],
+      [
+        "id",
+        "laporan"
+      ],
+      [
+        "id",
+        "Lapor"
+      ],
+      [
+        "id",
+        "mengaduan"
+      ],
+      [
+        "id",
+        "melapor"
+      ],
+      [
+        "id",
+        "mendaftar"
+      ],
+      [
+        "id",
+        "daftar"
+      ],
+      [
+        "id",
+        "Registrasi"
+      ],
+      [
+        "id",
+        "regis"
+      ],
+      [
+        "id",
+        "Sampai jumpa"
+      ],
+      [
+        "id",
+        "Bye"
+      ],
+      [
+        "id",
+        "Dadah"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "id": {
+        "greeting": [
+          {
+            "answer": "Halo!"
+          },
+          {
+            "answer": "Hai!"
+          },
+          {
+            "answer": "Halo, ada apa yang bisa saya bantu?"
+          }
+        ],
+        "ping": [
+          {
+            "answer": "pong"
+          },
+          {
+            "answer": "p!"
+          },
+          {
+            "answer": "Halo, ada apa yang bisa saya bantu?"
+          }
+        ],
+        "salam Pagi": [
+          {
+            "answer": "Selamat Pagi"
+          },
+          {
+            "answer": "Pagi, ada apa yang bisa saya bantu?"
+          }
+        ],
+        "salam Siang": [
+          {
+            "answer": "Selamat Siang"
+          },
+          {
+            "answer": "Siang, ada apa yang bisa saya bantu?"
+          }
+        ],
+        "salam Malam": [
+          {
+            "answer": "Selamat Malam"
+          },
+          {
+            "answer": "Selamat Malam, ada apa yang bisa saya bantu?"
+          }
+        ],
+        "Teimakasih": [
+          {
+            "answer": "Sama-sama! 😊"
+          },
+          {
+            "answer": "Sama-sama, ada apa yang bisa saya bantu?"
+          }
+        ],
+        "Salam": [
+          {
+            "answer": "wa'alaikumussalam wa rahmatullahi wa barakatuh"
+          },
+          {
+            "answer": "wa'alaikumussalam, ada apa yang bisa saya bantu?"
+          }
+        ],
+        "question": [
+          {
+            "answer": "Apa yang bisa saya bantu?\n\n1. Informasi ketersediaan kamar?\n2. Jadwal dokter?\nBalas dengan angka 1 atau 2."
+          },
+          {
+            "answer": "Halo! Ada yang bisa saya bantu?\n\n1. Cek ketersediaan kamar\n2. Lihat jadwal dokter\nSilakan balas dengan 1 atau 2."
+          },
+          {
+            "answer": "Selamat datang! Butuh bantuan?\n\n1. Info kamar tersedia\n2. Jadwal dokter\nBalas dengan angka 1 atau 2."
+          },
+          {
+            "answer": "Hai! Bagaimana saya bisa membantu?\n\n1. Cek kamar kosong\n2. Lihat jadwal dokter\nKetik 1 atau 2 untuk memilih."
+          },
+          {
+            "answer": "Butuh informasi?\n\n1. Ketersediaan kamar\n2. Jadwal dokter\nSilakan ketik angka 1 atau 2 untuk respon."
+          },
+          {
+            "answer": "Halo! Apa yang ingin Anda ketahui?\n\n1. Ketersediaan kamar kosong\n2. Jadwal dokter hari ini\nBalas dengan angka 1 atau 2."
+          },
+          {
+            "answer": "Selamat datang! Pilih opsi yang Anda butuhkan:\n\n1. Cek kamar yang tersedia\n2. Lihat jadwal dokter\nKetik 1 atau 2 untuk melanjutkan."
+          },
+          {
+            "answer": "Halo! Saya siap membantu.\n\n1. Ingin tahu kamar yang tersedia?\n2. Perlu informasi jadwal dokter?\nBalas dengan angka 1 atau 2."
+          },
+          {
+            "answer": "Apa yang bisa saya bantu hari ini?\n\n1. Info kamar kosong\n2. Jadwal dokter\nSilakan ketik 1 atau 2."
+          },
+          {
+            "answer": "Halo! Silakan pilih informasi yang Anda butuhkan:\n\n1. Ketersediaan kamar\n2. Jadwal dokter\nKetik angka 1 atau 2 untuk mendapatkan informasi."
+          }
+        ],
+        "question.visiMisi": [
+          {
+            "answer": "Menjadi Rumah Sakit Pendidikan Yang Berkualitas , Mandiri Dan Berinovasi Dengan Mengutamakan Keselamatan Pasien Tahun 2027"
+          }
+        ],
+        "question.layanan": [
+          {
+            "answer": "1. Laboratorium\n2. Ruang Operasi\n3. Rawat Inap\n4. Rawat Jalan\n5. Rawat Darurat"
+          },
+          {
+            "answer": "Untuk mengetahui layanan rsud bisa kunjungi https://kainraja.rsudaa.singkawangkota.go.id"
+          }
+        ],
+        "question.pengaduan": [
+          {
+            "answer": "Terima kasih atas laporan Anda. Kami akan segera memproses laporan Anda."
+          },
+          {
+            "answer": "Baik, untuk lebih lanjut bisa hubungi kami RSUD Abdul Aziz di 0812-2333-9999"
+          }
+        ],
+        "register": [
+          {
+            "answer": "Apakah sudah pernah berobat di sini sebelumnya? \nbalaskan dengan angka Ya atau Tidak"
+          },
+          {
+            "answer": "Apakah Anda sudah pernah berobat di sini sebelumnya? \nSilakan balas dengan Ya atau Tidak."
+          },
+          {
+            "answer": "Sebelumnya, apakah Anda pernah menjalani pengobatan di sini? \nSilakan balas dengan Ya atau Tidak."
+          }
+        ],
+        "goodbye": [
+          {
+            "answer": "Sampai jumpa!"
+          },
+          {
+            "answer": "Bye, semoga harimu menyenangkan!"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}

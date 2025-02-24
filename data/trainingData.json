@@ -1,0 +1,177 @@
+[
+    {
+        "intent": "greeting",
+        "utterances": [
+            "Halo hallo",
+            "Hai haii haaii",
+            "apakabar?",
+            "Permisi"
+        ],
+        "answers": [
+            "Halo!",
+            "Hai!",
+            "Halo, ada apa yang bisa saya bantu?"
+        ]
+    },
+    {
+        "intent": "ping",
+        "utterances": [
+            "p",
+            "ping"
+        ],
+        "answers": [
+            "pong",
+            "p!",
+            "Halo, ada apa yang bisa saya bantu?"
+        ]
+    },
+    {
+        "intent": "salam Pagi",
+        "utterances": [
+            "Selamat Pagi"
+        ],
+        "answers": [
+            "Selamat Pagi",
+            "Pagi, ada apa yang bisa saya bantu?"
+        ]
+    },
+    {
+        "intent": "salam Siang",
+        "utterances": [
+            "Selamat Siang"
+        ],
+        "answers": [
+            "Selamat Siang",
+            "Siang, ada apa yang bisa saya bantu?"
+        ]
+    },
+    {
+        "intent": "salam Malam",
+        "utterances": [
+            "Selamat Malam"
+        ],
+        "answers": [
+            "Selamat Malam",
+            "Selamat Malam, ada apa yang bisa saya bantu?"
+        ]
+    },
+    {
+        "intent": "Teimakasih",
+        "utterances": [
+            "Terimaksaih",
+            "Trima kasih",
+            "Terima kasi",
+            "Terima kasik",
+            "Trimakasi",
+            "Terimah kasih",
+            "Teri makasih",
+            "Treama kasih",
+            "Thxmakasih",
+            "Tremakasih"
+        ],
+        "answers": [
+            "Sama-sama! 😊",
+            "Sama-sama, ada apa yang bisa saya bantu?"
+        ]
+    },
+    
+    {
+        "intent": "Salam",
+        "utterances": [
+            "Assalamualaikum assalamuaikum Asalamualaikum Assalammualaikum Assalamuallaikum Assalamualikum Assalamualakum Assalmu'alaikum Asalamu'alaikum Assalammualikum Assalamuailakum Assalamulaikum",
+            "Ass",
+            "Assalamualaikum warahmatullahi wabarakatuh"
+        ],
+        "answers": [
+            "wa'alaikumussalam wa rahmatullahi wa barakatuh",
+            "wa'alaikumussalam, ada apa yang bisa saya bantu?"
+        ]
+    },
+    {
+        "intent": "question",
+        "utterances": [
+            "tanya",
+            "Bertanya",
+            "info",
+            "Informasi",
+            "Tanya",
+            "Pertanyaan",
+            "Pertanya",
+            "Jadwal",
+            "informasi ketersediaan kamar"
+        ],
+        "answers": [
+            "Apa yang bisa saya bantu?\n\n1. Informasi ketersediaan kamar?\n2. Jadwal dokter?\nBalas dengan angka 1 atau 2.",
+            "Halo! Ada yang bisa saya bantu?\n\n1. Cek ketersediaan kamar\n2. Lihat jadwal dokter\nSilakan balas dengan 1 atau 2.",
+            "Selamat datang! Butuh bantuan?\n\n1. Info kamar tersedia\n2. Jadwal dokter\nBalas dengan angka 1 atau 2.",
+            "Hai! Bagaimana saya bisa membantu?\n\n1. Cek kamar kosong\n2. Lihat jadwal dokter\nKetik 1 atau 2 untuk memilih.",
+            "Butuh informasi?\n\n1. Ketersediaan kamar\n2. Jadwal dokter\nSilakan ketik angka 1 atau 2 untuk respon.",
+            "Halo! Apa yang ingin Anda ketahui?\n\n1. Ketersediaan kamar kosong\n2. Jadwal dokter hari ini\nBalas dengan angka 1 atau 2.",
+            "Selamat datang! Pilih opsi yang Anda butuhkan:\n\n1. Cek kamar yang tersedia\n2. Lihat jadwal dokter\nKetik 1 atau 2 untuk melanjutkan.",
+            "Halo! Saya siap membantu.\n\n1. Ingin tahu kamar yang tersedia?\n2. Perlu informasi jadwal dokter?\nBalas dengan angka 1 atau 2.",
+            "Apa yang bisa saya bantu hari ini?\n\n1. Info kamar kosong\n2. Jadwal dokter\nSilakan ketik 1 atau 2.",
+            "Halo! Silakan pilih informasi yang Anda butuhkan:\n\n1. Ketersediaan kamar\n2. Jadwal dokter\nKetik angka 1 atau 2 untuk mendapatkan informasi."
+        ]
+    },
+    {
+        "intent": "question.visiMisi",
+        "utterances": [
+            "visi",
+            "misi"
+        ],
+        "answers": [
+            "Menjadi Rumah Sakit Pendidikan Yang Berkualitas , Mandiri Dan Berinovasi Dengan Mengutamakan Keselamatan Pasien Tahun 2027"
+        ]
+    },
+    {
+        "intent": "question.layanan",
+        "utterances": [
+            "layanan",
+            "Fasilitas"
+        ],
+        "answers": [
+            "1. Laboratorium\n2. Ruang Operasi\n3. Rawat Inap\n4. Rawat Jalan\n5. Rawat Darurat",
+            "Untuk mengetahui layanan rsud bisa kunjungi https://kainraja.rsudaa.singkawangkota.go.id"
+        ]
+    },
+    {
+        "intent": "question.pengaduan",
+        "utterances": [
+            "pengaduan",
+            "laporan",
+            "Lapor",
+            "mengaduan",
+            "melapor"
+        ],
+        "answers": [
+            "Terima kasih atas laporan Anda. Kami akan segera memproses laporan Anda.",
+            "Baik, untuk lebih lanjut bisa hubungi kami RSUD Abdul Aziz di 0812-2333-9999"
+        ]
+    },
+    {
+        "intent": "register",
+        "utterances": [
+            "mendaftar",
+            "daftar",
+            "Registrasi",
+            "regis"
+        ],
+        "answers": [
+            "Apakah sudah pernah berobat di sini sebelumnya? \nbalaskan dengan angka Ya atau Tidak",
+            "Apakah Anda sudah pernah berobat di sini sebelumnya? \nSilakan balas dengan Ya atau Tidak.",
+            "Sebelumnya, apakah Anda pernah menjalani pengobatan di sini? \nSilakan balas dengan Ya atau Tidak."
+        ]
+    },
+    {
+        "intent": "goodbye",
+        "utterances": [
+            "Sampai jumpa",
+            "Bye",
+            "Dadah"
+        ],
+        "answers": [
+            "Sampai jumpa!",
+            "Bye, semoga harimu menyenangkan!"
+        ]
+    }
+]

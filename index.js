@@ -1,62 +1,24 @@
-const tf = require('@tensorflow/tfjs');
-const qna = require('@tensorflow-models/qna');
-const readline = require('readline');
-const fs = require('fs');
+const { NlpManager } = require('node-nlp');
 
-// Muat konteks dari file JSON
-const contexts = JSON.parse(fs.readFileSync('context.json', 'utf8'));
 
-// Fungsi untuk memuat model BERT
-async function loadModel() {
-    console.log("Memuat model BERT...");
-    const model = await qna.load();
-    console.log("Model BERT berhasil dimuat!");
-    return model;
-}
+const manager = new NlpManager({ languages: ['id'] });
 
-// Fungsi untuk memilih konteks berdasarkan pertanyaan
-function getContext(question) {
-    if (question.toLowerCase().includes("bert")) return contexts.bert;
-    if (question.toLowerCase().includes("tensorflow")) return contexts.tensorflow;
-    if (question.toLowerCase().includes("javascript")) return contexts.javascript;
-    return "Maaf, saya tidak memiliki informasi tentang itu.";
-}
+// Tambahkan pertanyaan dan jawaban
+manager.addDocument('id', 'Apa itu NLP?', 'nlp.pengertian');
+manager.addDocument('id', 'Bagaimana cara kerja NLP?', 'nlp.cara_kerja');
 
-// Fungsi utama chatbot
-async function chatbot() {
-    const model = await loadModel();
-    const rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout
-    });
+manager.addAnswer('id', 'nlp.pengertian', 'NLP adalah pemrosesan bahasa alami.');
+manager.addAnswer('id', 'nlp.pengertian', 'NLP adalah gak tau apa.');
+manager.addAnswer('id', 'nlp.cara_kerja', 'NLP bekerja dengan analisis teks menggunakan AI.');
 
-    console.log("\nChatbot siap! Ketik pertanyaanmu atau 'exit' untuk keluar.");
-    rl.setPrompt("> ");
-    rl.prompt();
+(async () => {
+    await manager.train();
+    manager.save();
 
-    rl.on("line", async (question) => {
-        if (question.toLowerCase() === "exit") {
-            rl.close();
-            return;
-        }
-
-        const context = getContext(question);
-        const answers = await model.findAnswers(question, context);
-
-        if (answers.length > 0) {
-            console.log("Jawaban:", answers[0].text);
-        } else {
-            console.log("Maaf, saya tidak tahu jawabannya.");
-        }
-
-        rl.prompt();
-    });
-
-    rl.on("close", () => {
-        console.log("Chatbot BERT telah selesai.");
-        process.exit(0);
-    });
-}
-
-// Jalankan chatbot
-chatbot();
+    const response = await manager.process('id', 'Hii');
+    console.log(response.intent);
+    if (response.intent != 'None') {
+        console.log(response.answer);
+    }
+    console.log("Maaf, saya tidak mengerti pertanyaanmu.");
+})();
