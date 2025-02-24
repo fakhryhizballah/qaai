@@ -76,6 +76,16 @@ async function cekPasien(params, dataSession) {
             return `Maaf anda tidak ada rujukan mau daftra sebagai peserta umum?`
         }
         if (cekSttRujukan(data_rujukan.data.response.rujukan[0].tglKunjungan)) {
+            Session.update({
+                feedback_message: null,
+                status: 0,
+                feedback_status: null,
+                feedback_function: null
+            }, {
+                where: {
+                    id: dataSession.id
+                }
+            });
             return `Maaf Rujukan ${data_rujukan.data.response.rujukan[0].peserta.nama} sudah habis silahkan minta ke faskes pertama ${data_rujukan.data.response.rujukan[0].provPerujuk.nama}`
         }
         Session.update({

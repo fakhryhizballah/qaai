@@ -36,7 +36,7 @@
         ]
     },
     {
-        "intent": "salam Siang",
+        "intent": "salam.Siang",
         "utterances": [
             "Selamat Siang"
         ],
@@ -46,13 +46,28 @@
         ]
     },
     {
-        "intent": "salam Malam",
+        "intent": "salam.Malam",
         "utterances": [
             "Selamat Malam"
         ],
         "answers": [
             "Selamat Malam",
             "Selamat Malam, ada apa yang bisa saya bantu?"
+        ]
+    },
+    {
+        "intent": "salam.ok",
+        "utterances": [
+            "ok",
+            "oke",
+            "sip",
+            "okee",
+            "sip",
+            "sipp"
+        ],
+        "answers": [
+            "Oke,",
+            "sipp"
         ]
     },
     {
