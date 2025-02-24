@@ -15,7 +15,7 @@ const processMessage = async (req, res) => {
         where: {
             nowa: nowa,
             updatedAt: {
-                [Op.gte]: new Date(Date.now() - 900 * 1000)
+                [Op.gte]: new Date(Date.now() - 150 * 1000)
             },
             
         }
