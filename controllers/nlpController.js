@@ -1,7 +1,7 @@
 const manager = require("../nlp/nlpModel");
 const axios = require('axios');
 const fungsiModul = require('../nlp/fungsi.js'); 
-const { sendWA } = require("../helper/bpjs");
+const { sendWA, gemini } = require("../helper/bpjs");
 const { Session } = require("../models");
 
 const { Op } = require("sequelize");
@@ -81,7 +81,18 @@ const processMessage = async (req, res) => {
             answer: response.answer,
         });
     }
-    sendWA(nowa, response.answer)
+    // sendWA(nowa, response.answer)
+
+    if (response.answer == undefined) {
+        let dataGemini = await gemini(message)
+        console.log(typeof dataGemini)
+        sendWA(nowa, dataGemini)
+
+        return res.json({
+            intent: response.intent,
+            answer: dataGemini.toString(),
+        });
+    }
     return res.json({
         intent: response.intent,
         answer: response.answer || "Maaf, saya tidak mengerti. Coba tanyakan informasi ketersediaan kamar atau jadwal dokter.",

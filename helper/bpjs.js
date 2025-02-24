@@ -1,3 +1,4 @@
+const { GoogleGenerativeAI } = require("@google/generative-ai");
 const axios = require('axios');
 require('dotenv').config();
 let { BPJSHOST } = process.env;
@@ -51,4 +52,13 @@ async function sendWA(telp, pesan) {
 
 }
 
-module.exports = { findBPJS, cekRujukan, cekSttRujukan, sendWA }
+async function gemini(params) {
+    const genAI = new GoogleGenerativeAI("AIzaSyDBaRLzpUSUpODcovsIhyEvtbeZimg9bHA");
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-pro-exp-02-05" });
+
+    const result = await model.generateContent(params);
+    // console.log(result.response.text());
+    return result.response.text();
+}
+
+module.exports = { findBPJS, cekRujukan, cekSttRujukan, sendWA, gemini }
