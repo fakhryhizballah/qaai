@@ -93,6 +93,7 @@ const processMessage = async (req, res) => {
             answer: dataGemini.toString(),
         });
     }
+    sendWA(nowa, response.answer)
     return res.json({
         intent: response.intent,
         answer: response.answer || "Maaf, saya tidak mengerti. Coba tanyakan informasi ketersediaan kamar atau jadwal dokter.",
