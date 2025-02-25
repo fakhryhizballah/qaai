@@ -18,11 +18,11 @@ function question(params, dataSession) {
     }
     if (params === "1") {
         return `Untuk mengetahui ketersediaan kamar secara realtime bisa di cek di KAIN RAJA
-        klik link berikut ini https://kainraja.rsudaa.singkawangkota.go.id/daftar-kamar`;
+klik link berikut ini https://kainraja.rsudaa.singkawangkota.go.id/daftar-kamar`;
     }
     if (params === "2") {
         return `Untuk mengetahui jadwal praktek dokter bisa di cek di instagram RSUD dr. Abdul Aziz 
-        klik link berikut ini https://kainraja.rsudaa.singkawangkota.go.id/poli`;
+klik link berikut ini https://kainraja.rsudaa.singkawangkota.go.id/poli`;
     }
 
     return false;
@@ -86,7 +86,7 @@ async function cekPasien(params, dataSession) {
                     id: dataSession.id
                 }
             });
-            return `Maaf Rujukan ${data_rujukan.data.response.rujukan[0].peserta.nama} sudah habis silahkan minta ke faskes pertama ${data_rujukan.data.response.rujukan[0].provPerujuk.nama}`
+            return `Maaf Rujukan ${data_rujukan.data.response.rujukan[0].peserta.nama} sudah habis silahkan minta ke faskes pertama ${data_rujukan.data.response.rujukan[0].provPerujuk.nama} untuk rujukan baru`
         }
         Session.update({
             feedback_message: "balas ya atau tidak",
@@ -147,7 +147,34 @@ async function cekPoli(params, dataSession) {
     }
 
     return 'oke'
+}
+async function dafartPXumum(params, dataSession) {
+    params = params.toLowerCase();
+    let dataSesi = await Session.findOne({
+        where: {
+            id: dataSession.id
+        }
+    })
+    let feedback_data = JSON.parse(dataSesi.feedback_data)
+    Session.update({
+        feedback_message: null,
+        status: 0,
+        feedback_status: null,
+        feedback_function: null
+    }, {
+        where: {
+            id: dataSession.id
+        }
+    });
+    if (params == 'ya') {
+        return `baik sudah di daftrakan ke poli ${feedback_data.poliRujukan.nama} untuk besok yaa`
 
+    }
+    if (params == 'tidak') {
+        return 'hmm ini masih percobaan sih...'
+    }
+
+    return 'oke'
 }
 
 module.exports = {

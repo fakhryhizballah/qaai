@@ -1,7 +1,7 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const axios = require('axios');
 require('dotenv').config();
-let { BPJSHOST } = process.env;
+let { BPJSHOST, SIMRSHOST } = process.env;
 
 
 const findBPJS = async (noKartu, type) => {
@@ -22,6 +22,15 @@ const cekRujukan = async (noKartu) => {
         maxBodyLength: Infinity,
         url: `${BPJSHOST}/api/bpjs/peserta/rujukan?noKartu=${noKartu}`,
         headers: {}
+    };
+    return await axios.request(config)
+}
+const cekPoli = async () => {
+    let config = {
+        method: 'get',
+        maxBodyLength: Infinity,
+        url: `${SIMRSHOST}/api/ralan/poli`,
+        headers: { Authorization: process.env.SECRET_WA, "Content-Type": "application/json" }
     };
     return await axios.request(config)
 }
