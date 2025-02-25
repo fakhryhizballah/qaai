@@ -22,7 +22,7 @@ function question(params, dataSession) {
     }
     if (params === "2") {
         return `Untuk mengetahui jadwal praktek dokter bisa di cek di instagram RSUD dr. Abdul Aziz 
-        klik link berikut ini https://www.instagram.com/rsudabdulaziz/`;
+        klik link berikut ini https://kainraja.rsudaa.singkawangkota.go.id/poli`;
     }
 
     return false;
