@@ -1,7 +1,7 @@
 const manager = require("../nlp/nlpModel");
 const axios = require('axios');
 const fungsiModul = require('../nlp/fungsi.js'); 
-const { sendWA, gemini } = require("../helper/bpjs");
+const { sendWA, gemini, cekPoli } = require("../helper/bpjs");
 const { Session } = require("../models");
 
 const { Op } = require("sequelize");

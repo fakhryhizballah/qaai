@@ -25,11 +25,39 @@ const cekRujukan = async (noKartu) => {
     };
     return await axios.request(config)
 }
-const cekPoli = async () => {
+const cekDaftarPoli = async () => {
     let config = {
         method: 'get',
         maxBodyLength: Infinity,
         url: `${SIMRSHOST}/api/ralan/poli`,
+        headers: { Authorization: process.env.SECRET_WA, "Content-Type": "application/json" }
+    };
+    return await axios.request(config)
+}
+const cekDaftarDR = async (kd_poli, tanggal) => {
+    let config = {
+        method: 'get',
+        maxBodyLength: Infinity,
+        url: `${SIMRSHOST}/api/registrasi/jadwal?kd_poli=${kd_poli}&tanggal_periksa=${tanggal}`,
+        headers: { Authorization: process.env.SECRET_WA, "Content-Type": "application/json" }
+    };
+    return await axios.request(config)
+}
+const cekDaftarDRbpjs = async (kd_poli, tanggal) => {
+    let config = {
+        method: 'get',
+        maxBodyLength: Infinity,
+        url: `${SIMRSHOST}/api/registrasi/jadwalBPJS?kd_poli=${kd_poli}&tanggal_periksa=${tanggal}`,
+        headers: { Authorization: process.env.SECRET_WA, "Content-Type": "application/json" }
+    };
+    return await axios.request(config)
+}
+const regis = async (data) => {
+    let config = {
+        method: 'post',
+        data: data,
+        maxBodyLength: Infinity,
+        url: `${SIMRSHOST}/api/registrasi/registrasi`,
         headers: { Authorization: process.env.SECRET_WA, "Content-Type": "application/json" }
     };
     return await axios.request(config)
@@ -70,4 +98,4 @@ async function gemini(params) {
     return result.response.text();
 }
 
-module.exports = { findBPJS, cekRujukan, cekSttRujukan, sendWA, gemini }
+module.exports = { findBPJS, cekRujukan, cekSttRujukan, cekDaftarPoli, cekDaftarDR, cekDaftarDRbpjs, regis, sendWA, gemini }
