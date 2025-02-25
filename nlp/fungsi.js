@@ -209,7 +209,7 @@ Silahkan datang lansgung ke poli pada tanggal ${tanggal} pukul ${jdlDr.data.data
                 },
             }
         );
-        return `baik, ${feedback_data.nama} silahkan pilih poli 
+        return `baik, ${feedback_data.px.nama} silahkan pilih poli 
         ${filteredList
                 .map((poli, i) => {
                     return `${i + 1}. ${poli.nm_poli}`;
