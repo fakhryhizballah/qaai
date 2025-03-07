@@ -70,7 +70,8 @@ function register(params, dataSession) {
                 },
             }
         );
-        return `Baik terimakasih`;
+        return `silahkan hubungi Loket Pendaftaran RSUD dr Abdul Aziz.
+senin-kamis 07.30-11.30 dan jum'at-sabtu 07.30-10.00🙏🏻`;
     }
     return false;
 }
@@ -311,7 +312,7 @@ async function daftarPXumum(params, dataSession) {
                 },
             }
         );
-        return "baik terimakasih";
+        return "baik terimakasih sudah menghubungi kami";
     }
 
     return;
