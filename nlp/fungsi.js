@@ -204,7 +204,7 @@ async function daftarPXbpjs(params, dataSession) {
         });
 
         return `baik, sudah di daftrakan ke poli ${feedback_data.poliRujukan.nama} dengan ${jdlDr.data.data[0].dokter.nm_dokter} 
-No RM      : ${feedback_data.px.mr.noMR}
+No RM      : ${hasilRegis.data.data.no_rkm_medis}
 No Rawat   : ${hasilRegis.data.data.no_rawat}
 No Antrian : ${hasilRegis.data.data.no_reg}
 Silahkan datang lansgung ke poli pada tanggal ${tanggal} pukul ${jdlDr.data.data[0].jam_mulai}`;
@@ -240,15 +240,14 @@ Silahkan datang lansgung ke poli pada tanggal ${tanggal} pukul ${jdlDr.data.data
                 },
             }
         );
-        return `baik, ${feedback_data.px.nama} silahkan pilih poli 
+        console.log(feedback_data);
+        return `baik, ${feedback_data.peserta.nama} silahkan pilih poli 
         ${filteredList
                 .map((poli, i) => {
                     return `${i + 1}. ${poli.nm_poli}`;
                 })
                 .join("\n")} \nketik angka untuk memilih poli`;
     }
-
-    return "oke";
 }
 
 async function daftarPXumum(params, dataSession) {
@@ -396,7 +395,7 @@ async function registerPXbpjs(params, dataSession) {
     });
 
     return `baik, ${feedback_data.px.peserta.nama} sudah kami daftarkan ke poli ${feedback_data.poli[poli - 1].nm_poli} dengan ${feedback_data.poli[poli - 1].nm_dokter} 
-No RM      : ${feedback_data.px.mr.noMR}
+No RM      : ${feedback_data.px.peserta.mr.noMR}
 No Rawat   : ${hasilRegis.data.data.no_rawat}
 No Antrian : ${hasilRegis.data.data.no_reg}
 Silahkan datang lansgung ke poli pada tanggal ${tanggal} pukul ${feedback_data.poli[poli - 1].jam_mulai
