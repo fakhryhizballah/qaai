@@ -54,7 +54,7 @@ function register(params, dataSession) {
                 },
             }
         );
-        return "Ketik no KTP atau no BPJS pasein yang mau di daftarkan";
+        return "Ketik no KTP atau no BPJS pasein yang mau di daftarkan untuk besok";
     }
     if (params === "tidak" || params === "belum") {
         Session.update(
