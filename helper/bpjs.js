@@ -26,10 +26,12 @@ const cekRujukan = async (noKartu) => {
     return await axios.request(config)
 }
 const cekDaftarPoli = async () => {
+    let tomorrow = new Date(Date.now() + 1000 * 60 * 60 * 24);
+    let tanggal = tomorrow.toISOString().slice(0, 10);
     let config = {
         method: 'get',
         maxBodyLength: Infinity,
-        url: `${SIMRSHOST}/api/ralan/poli`,
+        url: `${SIMRSHOST}/api/registrasi/alljadwal?tanggal_periksa=${tanggal}`,
         headers: { Authorization: process.env.SECRET_WA, "Content-Type": "application/json" }
     };
     return await axios.request(config)
