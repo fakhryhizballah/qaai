@@ -97,7 +97,7 @@ const processMessage = async (req, res) => {
         where: {
             nowa: nowa,
             updatedAt: {
-                [Op.gte]: new Date(Date.now() - 150 * 1000)
+                [Op.gte]: new Date(Date.now() - 60 * 60 * 1000)
             }
         }
     })
@@ -125,6 +125,7 @@ const processMessage = async (req, res) => {
             feedback_message: newChat.message.content,
             stage: 2
         });
+        sendWA(nowa, newChat.message.content)
         return res.json({
             intent: findChatflow[findChatflow.length - 1].stage,
             answer: newChat.message.content,
