@@ -14,7 +14,22 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Chatflow.init({
-    feedback_message: DataTypes.STRING
+    nowa: {
+      type: DataTypes.STRING
+    },
+    message: {
+      type: DataTypes.STRING
+    },
+    role: {
+      type: DataTypes.STRING
+    },
+    feedback_message: {
+      type: DataTypes.STRING
+    },
+    stage: {
+      type: DataTypes.INTEGER
+    },
+
   }, {
     sequelize,
     modelName: 'Chatflow',

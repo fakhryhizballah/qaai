@@ -9,9 +9,22 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      feedback_message: {
+      nowa: {
         type: Sequelize.STRING
       },
+      message: {
+        type: Sequelize.STRING
+      },
+      role: {
+        type: Sequelize.STRING
+      },
+      feedback_message: {
+        type: Sequelize.TEXT,
+      },
+      stage: {
+        type: Sequelize.INTEGER
+      },
+
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

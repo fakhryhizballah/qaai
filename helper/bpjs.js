@@ -90,9 +90,39 @@ async function sendWA(telp, pesan) {
     }
 
 }
+async function ollama(message) {
+    try {
+        let data = JSON.stringify({
+            "model": process.env.OLAMA_MODEL,
+            "messages": [
+                {
+                    "role": "system",
+                    "content": process.env.OLAMA_ROLE
+                },
+                ...message
+            ],
+            "stream": false
+        });
+        console.log(data)
+        let res = await axios.post(process.env.OLAMA_HOST, data, {
+            headers: {
+                Authorization: "Bearer " + process.env.OLAMA_TOKEN,
+                "Content-Type": "application/json",
+                timeout: 2000 // only wait for 2s
+            }
+        });
+        // return null
+        return res.data
+    } catch (error) {
+        console.log(error)
+        return null
+
+    }
+
+}
 
 async function gemini(params) {
-    const genAI = new GoogleGenerativeAI("AIzaSyDBaRLzpUSUpODcovsIhyEvtbeZimg9bHA");
+    const genAI = new GoogleGenerativeAI("AIzaSyA2GvWnoFjjxYbNjD9LrwfyjwQ3YatLKCM");
     const model = genAI.getGenerativeModel({ model: "gemini-2.0-pro-exp-02-05" });
 
     const result = await model.generateContent(params);
@@ -100,4 +130,4 @@ async function gemini(params) {
     return result.response.text();
 }
 
-module.exports = { findBPJS, cekRujukan, cekSttRujukan, cekDaftarPoli, cekDaftarDR, cekDaftarDRbpjs, regis, sendWA, gemini }
+module.exports = { findBPJS, cekRujukan, cekSttRujukan, cekDaftarPoli, cekDaftarDR, cekDaftarDRbpjs, regis, sendWA, gemini, ollama }
