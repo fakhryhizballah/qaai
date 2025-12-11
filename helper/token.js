@@ -1,7 +1,7 @@
 const crypto = require('crypto');
 
 // --- KONFIGURASI ---
-const TIME_STEP = 60; // 1 Menit (dalam detik)
+const TIME_STEP = 120; // 1 Menit (dalam detik)
 
 /**
  * Fungsi untuk menghasilkan Token 4 Digit
@@ -13,16 +13,12 @@ function generateToken(userId, secretKey) {
     const currentEpoch = Math.floor(Date.now() / 1000);
     const timeInterval = Math.floor(currentEpoch / TIME_STEP);
     const payload = `${userId}-${timeInterval}`;
-
-    // 4. Buat HMAC-SHA256 Hash
     const hmac = crypto.createHmac('sha256', secretKey);
     hmac.update(payload);
     const hexDigest = hmac.digest('hex');
     const hashInt = parseInt(hexDigest.substring(0, 8), 16);
-    // 6. Ambil 4 Digit Terakhir (Modulo 10000)
-    const tokenInt = hashInt % 10000;
-    // 7. Format menjadi string dengan 'Padding' (misal 45 -> "0045")
-    return tokenInt.toString().padStart(4, '0');
+    const tokenInt = hashInt % 100000;
+    return tokenInt.toString().padStart(5, '0');
 }
 
 /**
@@ -43,8 +39,8 @@ function verifyToken(inputToken, userId, secretKey) {
 
 // --- CONTOH PENGGUNAAN ---
 /**
-const myUserId = "08953";
-const mySecret = "KunciRahasiaDapur";
+const myUserId = "0895321701798";
+const mySecret = "rahasiaBangetDeh";
 
 // 1. Generate Token
 console.log("=== GENERATOR TOKEN ===");
@@ -61,7 +57,7 @@ const isSuccess = verifyToken(token, myUserId, mySecret);
 console.log(`Input "${token}" -> Hasil: ${isSuccess ? "✅ VALID" : "❌ GAGAL"}`);
 
 // Skenario B: User memasukkan token salah / ngawur
-const wrongToken = "0000";
+const wrongToken = "74696";
 const isFail = verifyToken(wrongToken, myUserId, mySecret);
 console.log(`Input "${wrongToken}" -> Hasil: ${isFail ? "✅ VALID" : "❌ GAGAL"}`);
  */
