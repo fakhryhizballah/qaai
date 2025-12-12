@@ -1,9 +1,6 @@
-const manager = require("../nlp/nlpModel");
-const axios = require('axios');
-const fungsiModul = require('../nlp/fungsi.js'); 
-const { sendWA, gemini, cekPoli, ollama } = require("../helper/bpjs");
+const { sendWA, ollama } = require("../helper/bpjs");
 const { generateToken } = require("../helper/token");
-const { Session, Chatflow, sequelize } = require("../models");
+const { Chatflow, sequelize } = require("../models");
 const SECRET_OTP = process.env.SECRET_OTP
 
 const { Op } = require("sequelize");
