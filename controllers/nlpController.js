@@ -22,6 +22,10 @@ const processMessage = async (req, res) => {
                     answer: null
                 })
             }
+            return res.json({
+                intent: "NowaNotFound",
+                answer: null
+            })
 
         } else {
             let otp = generateToken(nowa, SECRET_OTP);
