@@ -17,6 +17,7 @@
     "express": "^4.21.2",
     "mariadb": "^3.4.0",
     "node-nlp": "^5.0.0-alpha.5",
+    "redis": "^5.10.0",
     "sequelize": "^6.37.5"
   }
 }
