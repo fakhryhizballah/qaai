@@ -1,4 +1,4 @@
-const { sendWA, ollama } = require("../helper/bpjs");
+const { sendWA, gemini, cekPoli, ollama } = require("../helper/bpjs");
 const { generateToken } = require("../helper/token");
 const { Chatflow, sequelize } = require("../models");
 const SECRET_OTP = process.env.SECRET_OTP
@@ -9,16 +9,45 @@ const processMessage = async (req, res) => {
     const { message, nowa } = req.body;
     if (!message || !nowa)
         return res.status(400).json({ error: "Message and nowa is required" });
-    if (message.toLowerCase() == "otp") {
-        let otp = generateToken(nowa, SECRET_OTP);
-        let pesan = `Kode OTP anda adalah *${otp}* \nKode ini akan kadaluarsa dalam 1 menit.`
-        await sendWA(nowa, pesan);
-        return res.json({
-            intent: "otp",
-            answer: pesan
-        })
+    if (message.toLowerCase().includes("otp")) {
+        if (nowa.includes("@lid")) {
+            let findNowa = await req.cache.get("SIMPEG:lid:" + nowa);
+            if (findNowa) {
+                console.log(findNowa);
+                let otp = generateToken(findNowa, SECRET_OTP);
+                let pesan = `Kode OTP anda adalah *${otp}* \nKode ini akan kadaluarsa dalam 1 menit.`
+                await sendWA(nowa, pesan);
+                return res.json({
+                    intent: "otp",
+                    answer: null
+                })
+            }
+            return res.json({
+                intent: "NowaNotFound",
+                answer: null
+            })
+
+        } else {
+            let otp = generateToken(nowa, SECRET_OTP);
+            let pesan = `Kode OTP anda adalah *${otp}* \nKode ini akan kadaluarsa dalam 1 menit.`
+            await sendWA(nowa, pesan);
+            return res.json({
+                intent: "otp",
+                answer: null
+            })
+        }
 
     }
+    // if (message.toLowerCase() == "otp") {
+    //     let otp = generateToken(nowa, SECRET_OTP);
+    //     let pesan = `Kode OTP anda adalah *${otp}* \nKode ini akan kadaluarsa dalam 1 menit.`
+    //     await sendWA(nowa, pesan);
+    //     return res.json({
+    //         intent: "otp",
+    //         answer: pesan
+    //     })
+
+    // }
     let findChatflow = await Chatflow.findAll({
         where: {
             nowa: nowa,
