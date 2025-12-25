@@ -1,6 +1,6 @@
 const { sendWA, gemini, cekPoli, ollama } = require("../helper/bpjs");
 const { generateToken } = require("../helper/token");
-const { Session, Chatflow, sequelize } = require("../models");
+const { Chatflow, sequelize } = require("../models");
 const SECRET_OTP = process.env.SECRET_OTP
 
 const { Op } = require("sequelize");
