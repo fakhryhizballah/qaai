@@ -75,9 +75,10 @@ function cekSttRujukan(tglKunjungan) {
 
     return diffInMonths > 3;
 }
-async function sendWA(telp, pesan) {
+async function sendWA(telp, pesan, reply) {
     try {
-        await axios.post(process.env.HOSTWA, { telp: telp, message: pesan }, {
+
+        await axios.post(reply, { telp: telp, message: pesan }, {
             headers: {
                 Authorization: process.env.SECRET_WA,
                 "Content-Type": "application/json",

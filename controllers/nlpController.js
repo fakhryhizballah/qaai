@@ -1,12 +1,13 @@
 const { sendWA, gemini, cekPoli, ollama } = require("../helper/bpjs");
 const { generateToken } = require("../helper/token");
-const { Chatflow, sequelize } = require("../models");
+// const { Chatflow, sequelize } = require("../models");
 const SECRET_OTP = process.env.SECRET_OTP
 
 const { Op } = require("sequelize");
 
 const processMessage = async (req, res) => {
-    const { message, nowa } = req.body;
+    const { message, nowa, oldMessages, reply } = req.body;
+    const replyto = reply || process.env.HOSTWA
     if (!message || !nowa)
         return res.status(400).json({ error: "Message and nowa is required" });
     if (message.toLowerCase().includes("otp")) {
@@ -16,7 +17,7 @@ const processMessage = async (req, res) => {
                 console.log(findNowa);
                 let otp = generateToken(findNowa, SECRET_OTP);
                 let pesan = `Kode OTP anda adalah *${otp}* \nKode ini akan kadaluarsa dalam 1 menit.`
-                await sendWA(nowa, pesan);
+                await sendWA(nowa, pesan, replyto);
                 return res.json({
                     intent: "otp",
                     answer: null
@@ -30,7 +31,7 @@ const processMessage = async (req, res) => {
         } else {
             let otp = generateToken(nowa, SECRET_OTP);
             let pesan = `Kode OTP anda adalah *${otp}* \nKode ini akan kadaluarsa dalam 1 menit.`
-            await sendWA(nowa, pesan);
+            await sendWA(nowa, pesan, replyto);
             return res.json({
                 intent: "otp",
                 answer: null
@@ -38,73 +39,34 @@ const processMessage = async (req, res) => {
         }
 
     }
-    // if (message.toLowerCase() == "otp") {
-    //     let otp = generateToken(nowa, SECRET_OTP);
-    //     let pesan = `Kode OTP anda adalah *${otp}* \nKode ini akan kadaluarsa dalam 1 menit.`
-    //     await sendWA(nowa, pesan);
-    //     return res.json({
-    //         intent: "otp",
-    //         answer: pesan
-    //     })
-
-    // }
-    let findChatflow = await Chatflow.findAll({
-        where: {
-            nowa: nowa,
-            updatedAt: {
-                [Op.gte]: new Date(Date.now() - 60 * 60 * 1000)
-            }
-        }
-    })
-    if (findChatflow.length > 0) {
-        console.log(findChatflow);
-        if (findChatflow[findChatflow.length - 1].stage == 2) {
-            return res.json({
-                intent: findChatflow[findChatflow.length - 1].stage,
-                answer: "sesi chat habis",
-            })
-        }
-        let newChat = await ollama([{
-            "role": "assistant",
-            "content": findChatflow[findChatflow.length - 1].feedback_message
-        }, {
-            "role": "user",
-            "content": message
-        }]);
-        console.log(newChat);
-        console.log(typeof newChat.message.content);
-        await Chatflow.create({
-            nowa: nowa,
-            message: message,
-            role: "user",
-            feedback_message: newChat.message.content,
-            stage: 2
-        });
-        sendWA(nowa, newChat.message.content)
+    // console.log(oldMessages);
+    if (!oldMessages) {
         return res.json({
-            intent: findChatflow[findChatflow.length - 1].stage,
-            answer: newChat.message.content,
+            intent: "default",
+            answer: null
         })
     } else {
+        const assistants = process.env.OLAMA_ASISTEN || [];
+        const mapped = oldMessages
+            .filter(m => m?.body) // skip empty
+            .map(m => ({
+                role: assistants.includes(m.from.user) ? 'assistant' : 'user',
+                content: m.body.trim()
+            }));
+        console.log(mapped);
         let newChat = await ollama([{
             "role": "user",
             "content": message
         }]);
         console.log(newChat);
         console.log(typeof newChat.message.content);
-        await Chatflow.create({
-            nowa: nowa,
-            message: message,
-            role: "user",
-            feedback_message: newChat.message.content,
-            stage: 1
-        });
-        sendWA(nowa, newChat.message.content)
+        await sendWA(nowa, newChat.message.content, replyto)
         return res.json({
-            intent: 1,
-            answer: newChat.message.content,
+            intent: "default",
+            answer: newChat
         })
     }
+
 };
 
 module.exports = { processMessage };
