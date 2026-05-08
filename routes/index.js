@@ -1,8 +1,11 @@
 const express = require("express");
-const { processMessage } = require("../controllers/nlpController");
+const nlp = require("../controllers/nlpController");
 
 const router = express.Router();
 
-router.post("/message", processMessage);
+router.post("/message", nlp.processMessage);
+router.post("/rolemodel", nlp.rolemodel);
+router.get("/rolemodel", nlp.getRole);
+router.post("/chat", nlp.chat);
 
 module.exports = router;
