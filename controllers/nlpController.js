@@ -1,6 +1,8 @@
 const { sendWA, gemini, cekPoli, ollama } = require("../helper/bpjs");
 const { generateToken } = require("../helper/token");
 const axios = require("axios");
+const fs = require("fs");
+const path = require("path");
 // const { Chatflow, sequelize } = require("../models");
 const SECRET_OTP = process.env.SECRET_OTP
 
@@ -208,11 +210,58 @@ const chat = async (req, res) => {
 
 }
 
+const generaterator = async (req, res) => {
+    let { prompt, model } = req.body;
+
+    // Membaca file secara synchronous (sesuai snippet Anda)
+    // let images = await fs.readFileSync(path.join(__dirname, '../gambar/img_20190511_084303.jpg'), 'base64');
+    let images = await fs.readFileSync(path.join(__dirname, '../gambar/struk-ke-debit.jpg'), 'base64');
+    console.log(images);
+
+    // Konversi Buffer ke Base64
+    // const base64String = images.toString('base64');
+
+    // // Opsional: Tambahkan data URI prefix jika ingin digunakan di HTML/CSS
+    // const dataUri = `data:image/jpeg;base64,${base64String}`;
+    // console.log(dataUri);
+
+    let data = JSON.stringify({
+        "model": model,
+        "system": `Anda adalah sistem ekstraksi data ahli.`,
+        "prompt": prompt,
+        "images": [
+            images
+        ],
+        "keep_alive": "5m",
+
+        "stream": false
+    });
+    try {
+        console.log(data);
+        let request = await axios.post(process.env.OLAMA_HOST_LOCAL + '/generate', data, {
+            headers: {
+                // Authorization: "Bearer " + process.env.OLAMA_TOKEN,
+                "Content-Type": "application/json",
+                timeout: 2000 // only wait for 2s
+            }
+        });
+        console.log(request);
+        // let result = JSON.parse(request.data.response)
+        return res.status(200).json({
+            message: "success",
+            // data: result,
+            raw: request.data
+        })
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json(error)
+    }
+}
+
 module.exports = {
     processMessage,
     rolemodel,
     getRole,
-    chat
+    chat,
+    generaterator
 };
-
- 
