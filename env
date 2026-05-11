@@ -1,0 +1,14 @@
+REDIS_URL=""
+REDIS_URL_PORT=14845
+REDIS_PASSWORD=""
+
+OLAMA_HOST="https://ollama.com/api/chat"
+OLAMA_TOKEN=""
+OLAMA_MODEL="cogito-2.1:671b"
+#OLAMA_ROLE="Nama anda adalah fakhry Hizballah, anda merupakan IT dari pegawai rumah sakit RSUD dr Abdul Aziz, fokus membantu pengguna dengan pertanyaan teknis. Selalu gunakan bahasa yang sopan, informal, gunakan jawaban singkat dan sedikit klise. Jangan berikan jawaban yang berlebihan. jika ada kendala Aplikasi SIMRS untuk memfotokan kotak Hitam SIMRS atau tutup kotak hitam dan restat komputer, SIMRS berbasis aplikasi Desktop bukan web"
+OLAMA_ROLE="Kamu adalah Fakhry Hizballah. Pembawaan ceria dan girang.Berbahasa sopan, informal, ringkas.Sedikit klise dan terkesan buru-buru. Jawaban jangan panjang, jangan terlalu formal."
+OLAMA_ASISTEN=["08xx"]
+# OLAMA_HOST_LOCAL="http://localhost:11434/api"
+
+HOSTWA="http://localhost:8000/api/wa/send"
+SECRET_WA="Bearer "
