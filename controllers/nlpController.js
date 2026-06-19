@@ -57,10 +57,10 @@ const processMessage = async (req, res) => {
         let newChat = await ollama([{
             "role": "user",
             "content": message
-        }]);
+        }]); h
         console.log(newChat);
-        console.log(typeof newChat.message.content);
-        await sendWA(nowa, newChat.message.content, replyto)
+        console.log(typeof newChat.choices[0].message.content);
+        await sendWA(nowa, newChat.choices[0].message.content, replyto)
         return res.json({
             intent: "default",
             answer: newChat
