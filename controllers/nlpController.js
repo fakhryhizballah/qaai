@@ -54,11 +54,12 @@ const processMessage = async (req, res) => {
                 content: m.body.trim()
             }));
         console.log(mapped);
+
         let newChat = await ollama([{
             "role": "user",
             "content": message
-        }]); h
-        console.log(newChat);
+        }]);
+        // console.log(newChat);
         console.log(typeof newChat.choices[0].message.content);
         await sendWA(nowa, newChat.choices[0].message.content, replyto)
         return res.json({
