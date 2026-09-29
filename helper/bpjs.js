@@ -1,5 +1,6 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const axios = require('axios');
+const jwt = require('jsonwebtoken');
 require('dotenv').config();
 let { BPJSHOST, SIMRSHOST } = process.env;
 
@@ -77,10 +78,12 @@ function cekSttRujukan(tglKunjungan) {
 }
 async function sendWA(telp, pesan, reply) {
     try {
-
+        let newToken = jwt.sign({
+            telp: telp,
+        }, process.env.JWT_SECRET_KEY, { expiresIn: 60 * 60 * 24 * 7 });
         await axios.post(reply, { telp: telp, message: pesan }, {
             headers: {
-                Authorization: process.env.SECRET_WA,
+                Authorization: "Bearer " + newToken,
                 "Content-Type": "application/json",
                 timeout: 2000 // only wait for 2s
             }

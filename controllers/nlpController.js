@@ -6,8 +6,8 @@ const SECRET_OTP = process.env.SECRET_OTP
 const { Op } = require("sequelize");
 
 const processMessage = async (req, res) => {
-    const { message, nowa, oldMessages, reply } = req.body;
-    const replyto = reply || process.env.HOSTWA
+    const { message, nowa, oldMessages, replay } = req.body;
+    const replyto = replay || process.env.HOSTWA
     if (!message || !nowa)
         return res.status(400).json({ error: "Message and nowa is required" });
     if (message.toLowerCase().includes("otp")) {
@@ -60,7 +60,7 @@ const processMessage = async (req, res) => {
             "content": message
         }]);
         // console.log(newChat);
-        console.log(typeof newChat.choices[0].message.content);
+        console.log(nowa, newChat.choices[0].message.content, replyto);
         await sendWA(nowa, newChat.choices[0].message.content, replyto)
         return res.json({
             intent: "default",
