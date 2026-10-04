@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const nlpRoutes = require("./routes");
+const mongoose = require('mongoose');
 const { createClient } = require('redis');
 
 const app = express();
@@ -18,6 +19,12 @@ client.on('connect', () => {
 });
 client.on('error', (err) => {
     console.log('Something went wrong ' + err);
+});
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log('Terhubung ke MongoDB!'))
+    .catch(err => console.error('Gagal terhubung ke MongoDB:', err));
+mongoose.connection.on('connected', () => {
+    console.log('Mongoose connected to DB');
 });
 
 app.use((req, res, next) => {

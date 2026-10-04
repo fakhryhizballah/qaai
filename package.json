@@ -17,7 +17,9 @@
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.3",
     "mariadb": "^3.4.0",
+    "mongoose": "^9.10.4",
     "node-nlp": "^5.0.0-alpha.5",
+    "openai": "^7.27.0",
     "redis": "^5.10.0",
     "sequelize": "^6.37.5"
   }
