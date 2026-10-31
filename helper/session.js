@@ -119,10 +119,9 @@ async function executeTool(name, args, nowa) {
                     content: args.content,
                     updatedAt: new Date()
                 },
-                { upsert: true, new: true }
+                { upsert: true, returnDocument: 'after' }
             );
             return JSON.stringify({ success: true, message: `Memori '${args.key}' berhasil disimpan untuk user ${nowa}.` });
-
         case "get_user_memory":
             const foundMemory = await UserMemory.findOne({
                 nowa: nowa,
